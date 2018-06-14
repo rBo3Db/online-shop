@@ -3,24 +3,27 @@
 .content {
     display: flex;
     flex-direction: row;
+    flex-flow: nowrap;
     
 }
 .main {
     display: flex;
     flex-direction: column;
     max-width: 70%;
+    box-sizing: border-box;
 }
 #goodsInCart {
     display:flex;
     flex-wrap: warp;
     max-width: 960px;
-	min-width: 470px;
-    flex-direction: column;
-    
+	min-width: 60%;
+    flex-direction: column; 
+    /* flex-shrink: 1;
+    overflow: scroll; */
 }
 .good {
     max-width: 960px;
-	min-width: 470px;
+	min-width: 60%;
     max-height: 300px;
     background: white;
     display: flex;
@@ -40,12 +43,19 @@
     margin-right: 20px;
 
 }
+.good__quantity{
+    width:30px;
+}
 .aside{
     max-width: auto;
-    background: red;
+    width: 100px;
+    box-sizing: border-box;
+    padding: 0px;
 }
 #totalCostUnderGoods {
 
     align-items: flex-end;
-    min-width: 70%;
+}
+#totalCostUnderGoods {
+    margin: 40px;
 }

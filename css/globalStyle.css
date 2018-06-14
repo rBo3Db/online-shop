@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	padding: 0 15px;
 	display: -webkit-flex;
-	 display: flex; 
+	display: flex; 
 	flex-direction: column;
 	flex: auto;
 	min-height: 100%;
@@ -48,7 +48,6 @@ body {
 	color: #eee;
 	margin: auto;
 	padding: 15px;
-	box-sizing: border-box;
 	text-align: center;
 }
 .logo {
