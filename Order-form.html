@@ -3,26 +3,38 @@
     <head>
         <meta charset="utf-8">
         <title> Order form </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/order-form.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     </head>
     <body>
         <div>
-            <header>
-                <img alt="logo">
-                <input type="search" name="search" placeholder="Search" pattern=".{1,}">
-                <button name="card"> </button>
-                <button name="profile"></button>
+            <header class="header">
+                <div class="logo">
+                    <img alt="logo" class="logo__logo" src=".\pics\logo.png">
+                </div>
+                <div class='header-buttons'>
+                    <input class="header-elements__Search" type="search" name="search" placeholder="Search" pattern=".{1,}">
+                    <button class="header-elements__Element" name="card">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button class="header-elements__Element" name="profile">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </div>
             </header>
-            <main>
-                <form>
-                    <input type="number"name="" placeholder="123" pattern=".{3,}" >
-                    <input type="number"name="numberOfCard" placeholder="0000000000000000" pattern=".{16,}" >
-                    <input type="month"name="monthAndYearOfCard" placeholder="mm" pattern=".{2,}" >
-                    <input type="text" name="NameOfHolder" placeholder="Name Surname" pattern=".{1,}" >
-                    <button type="submit">Finish</button>
-                </form>
+            <main class="main">
+                <div class="order-form">
+                    <form>
+                        <input class="order-form__form" type="number"name="" placeholder="123" pattern=".{3,}" >
+                        <input class="order-form__form" type="number"name="numberOfCard" placeholder="0000000000000000" pattern=".{16,}" >
+                        <input class="order-form__form" type="month"name="monthAndYearOfCard" placeholder="mm" pattern=".{2,}" >
+                        <input class="order-form__form" type="text" name="NameOfHolder" placeholder="Name Surname" pattern=".{1,}" >
+                        <button class="order-form__form" type="submit">Finish</button>
+                    </form>
+                </div>
             </main>
-
-            <footer>©</footer>
+            <footer class="footer">©</footer>
         </div>
     </body>
 </html>

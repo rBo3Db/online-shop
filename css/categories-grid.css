@@ -15,9 +15,16 @@
     flex-direction: column;
     text-align: center;
 }
+.categories-grid__category {
+    width: 270px;
+    height: 270px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 .pic-of-category {
     margin: auto;
     max-width: 70%;
     max-height: 70%;
-    
 }

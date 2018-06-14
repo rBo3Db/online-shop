@@ -1,0 +1,17 @@
+@import "globalStyle.css";
+.order-form{
+    max-width: 960px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.order-form__form {
+background: #222;
+
+height: 50px;
+font-size: 1.5rem;
+color: #eee;
+text-decoration: none;
+margin: 5px 0 0 5px;
+justify-content: center;}
