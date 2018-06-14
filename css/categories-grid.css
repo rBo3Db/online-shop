@@ -12,11 +12,12 @@
     height: 270px;
     background: white;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     text-align: center;
 }
 .pic-of-category {
-    max-width: 240px;
-    max-height: 200px;
+    margin: auto;
+    max-width: 70%;
+    max-height: 70%;
+    
 }
