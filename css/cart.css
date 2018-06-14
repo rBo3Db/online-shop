@@ -1,0 +1,51 @@
+@import "globalStyle.css";
+
+.content {
+    display: flex;
+    flex-direction: row;
+    
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+#goodsInCart {
+    display:flex;
+    flex-wrap: warp;
+    max-width: 960px;
+	min-width: 470px;
+    flex-direction: column;
+    
+}
+.good {
+    max-width: 960px;
+	min-width: 470px;
+    max-height: 300px;
+    background: white;
+    display: flex;
+    flex-wrap: unset;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 20px;
+    border-bottom: solid skyblue }
+.good__logo {
+    align-items: flex-start;
+    align-content: left;
+    width: 30%;
+    height: 30%;
+}
+.good__LinkRemoveGoodInCard {
+    margin-right: 20px;
+
+}
+.aside{
+    max-width: auto;
+    background: red;
+}
+#totalCostUnderGoods {
+
+    align-items: flex-end;
+    min-width: 70%;
+}
