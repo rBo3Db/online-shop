@@ -1,10 +1,10 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>cart </title>
+        <title>item cart </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/cart.css">
+        <link rel="stylesheet" href="./css/item-cart.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     </head>
     <body>
@@ -23,26 +23,31 @@
             </div>
         </header>
             <main class="main">
-                <p><span>Electronics</span>|<span>Nexus 7</span></p>
                 <div>
-                    <img name="main-pic-of-good">
-                    <div>
-                        <button name></button><img name="left-slider-button"></button>
-                        <img name="slide">
-                        <button name></button><img name="right-slider-button"></button>
-                    </div>    
+                    <p><span>Electronics</span>|<span>Nexus 7</span></p>
+                    <div class="slider">
+                      <img class="slider__main-slide" name="main-pic-of-good" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                         <div>
+                            <button name><i class="fas fa-arrow-left"></i></button>
+                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <button name><i class="fas fa-arrow-right"></i></button>
+                        </div>    
+                    </div>
                 </div>
-                <div>
-                    <span>Nexus 7</span> <img name="slide">
+                <div class="good-information">
+                    <h1 class="name-of-good">Nexus 7</h1> 
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     <p>Lorem ipsum dolor sit amet...</p>
-                    Price<span>$555</span>
+                    Price<b>$555</b>
                     <form>
                         Quantity
-                        <input type="number" pattern=".{0,}">
+                        <input class="quantity"type="number" pattern=".{0,}">
                         <button>Add to cart</button>
-                        <img name="twitter">
-                        <img name="facebook">
-                        <img name="email">
+                        <i class="fab fa-twitter"></i> <i class="fab fa-facebook-square"></i> <i class="far fa-envelope"></i>
                     </form>
                 </div>
 

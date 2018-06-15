@@ -39,6 +39,7 @@ body {
     flex-shrink: 1;
     flex-basis: auto;
 	box-sizing: border-box;
+	flex-wrap: wrap;
 }
 .footer {
 	background: #222;
@@ -89,3 +90,28 @@ body {
 	margin: 5px 0 0 5px;
 	justify-content: center;
 }
+#login {
+	margin:auto;
+	padding: 15px;
+	border: 3px solid black;
+	border-radius: 10px;
+	color: #0000cc;
+	display: none;
+	flex-direction: column;
+  }
+  #login:target {display: flex;}
+.x{
+	align-self: flex-end;
+	width: 25px;
+	margin:5px;
+}
+#register {
+	margin:auto;
+	padding: 15px;
+	border: 3px solid black;
+	border-radius: 10px;
+	color: #0000cc;
+	display: none;
+	flex-direction: column;
+  }
+  #register:target {display: flex;}

@@ -1,0 +1,37 @@
+@import "globalStyle.css";
+.addresses{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+    align-items: flex-end;
+
+}
+.shipping-address__names{
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+  
+}
+#shipping-address{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end
+    
+}
+#billing-address{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end
+    
+}
+.submit-button {
+    display: flex;
+    height: 20px;
+    margin: auto;
+}
+#form {
+    width: 100%;
+}
