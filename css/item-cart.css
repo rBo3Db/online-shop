@@ -1,6 +1,8 @@
 @import "globalStyle.css";
 .main {
     justify-content: space-around;
+    background-color: aliceblue;
+    padding-bottom: 30px;
 }
 .slider{
     width: 400px;
