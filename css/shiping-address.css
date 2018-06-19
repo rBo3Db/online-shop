@@ -2,9 +2,11 @@
 .addresses{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: auto;
-    align-items: flex-end;
+    justify-content: space-around; 
+    /* margin: auto; */
+    align-items: flex-start;
+    flex-wrap: wrap;
+
 
 }
 .shipping-address__names{
@@ -16,15 +18,17 @@
 #shipping-address{
     display:flex;
     flex-direction: column;
-    width: 100%;
-    align-items: flex-end
+    max-width: 50%;
+    min-width: 320px;
+    align-items: center;
     
 }
 #billing-address{
     display:flex;
     flex-direction: column;
-    width: 100%;
-    align-items: flex-end;
+    max-width: 50%;
+    min-width: 320px;
+    align-items: center;
     
 }
 .submit-button {
