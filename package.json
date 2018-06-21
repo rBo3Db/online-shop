@@ -1,0 +1,19 @@
+{
+  "name": "global-task",
+  "version": "1.0.0",
+  "description": "global task in epam lab",
+  "main": "index.html",
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "scss": "node-sass --watch scss -o css"
+},
+  "repository": {
+    "type": "git",
+    "url": "git@git.epam.com:Aleksei_Chernitsyn/global-task.git"
+  },
+  "author": "Aleksei Chernitsyn",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
