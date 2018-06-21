@@ -1,42 +1,4 @@
 @import "globalStyle.css";
-.widget {
-    /* position: absolute; */
-    /* left: 0; */
-    display: flex;
-    flex-direction: column;
-    padding: 10px 10px;
-    background: white;
-    max-width: 10%;
-    min-width: 150px;
-    
-}
-.widget-title {
-    letter-spacing: 2px;
-    color: #222;
-    font-size: 16px;
-    padding-left: 15px;
-    margin-bottom: 15px;
-    border-left: 2px solid black;
-}
-.widget-list {
-    padding: 0;
-    list-style: none;
-}
-  .widget-list a:before {
-    margin-right: 14px;
-}
-  .widget-list a {
-    text-decoration: none;
-    outline: none;
-    display: block;
-    padding: 6px 0; 
-    letter-spacing: 1px;
-    font-weight: 300;
-    color: #444;
-    transition: .3s linear;
-}
-.widget-list a:hover {color: #b99d61;}
-
 .good-in-list__pic-of-good-in-list {
     max-width: 200px;
     max-height: 200px;
@@ -52,31 +14,20 @@
     word-wrap: wrap;
 }
 .good-name-and-cost{
+    margin:0 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     word-wrap: wrap;
+
 }
 .NameOfGood{
     display:inline-block;
 }
-#content {
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    width: 100%;
-}
+
 .ShortDescriptionOfGoodInList {
     word-wrap: warp;
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
-}
-/* Standard syntax */
-@keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
-}
+
