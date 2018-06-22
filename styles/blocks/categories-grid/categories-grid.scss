@@ -1,0 +1,12 @@
+.categories-grid {
+    max-width: 960px;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+        @include element('category') {
+            margin-bottom: 5%;
+        }
+}

@@ -2,10 +2,10 @@
   "name": "global-task",
   "version": "1.0.0",
   "description": "global task in epam lab",
-  "main": "index.html",
+  "main": "categories-grid.html",
   "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1",
-  "scss": "node-sass --watch scss -o css"
+  "scss": "node-sass -w styles -o artifacts"
 },
   "repository": {
     "type": "git",

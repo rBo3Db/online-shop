@@ -1,0 +1,12 @@
+.category {
+    width: 270px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include element('pic-of-category') {
+        margin: auto;
+        max-width: 70%;
+        max-height: 70%;
+    } 
+}

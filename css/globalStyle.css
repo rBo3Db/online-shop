@@ -134,7 +134,7 @@ body {
 	display: flex;
 	
 }
-#popup-container {
+.popup{
 	position: fixed;
 	left: 50%;
 	top: 50%;

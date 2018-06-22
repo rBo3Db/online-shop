@@ -1,0 +1,14 @@
+.body {
+	margin: 0;
+	padding: 0 15px;
+	display: -webkit-flex;
+	display: flex; 
+	flex-direction: column;
+	flex: auto;
+	background: skyblue;
+	min-height: 100%;
+	font-family: sans-serif;
+		@include element('header') {
+			margin: 0 auto 30px auto;
+		}
+} 

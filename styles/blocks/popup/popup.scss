@@ -1,0 +1,10 @@
+.popup{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index:1001;
+	background-color: aquamarine;
+	border-radius: 10px;
+	transition: width 2s, height 5s, background-color 2s, transform 2s;
+}

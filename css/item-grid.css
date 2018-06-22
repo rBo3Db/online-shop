@@ -1,6 +1,7 @@
 @import "globalStyle.css";
 .main{
-    justify-content: space-around;}
+    justify-content: space-around;
+}
     
 .good-in-grid{
     display: flex;
