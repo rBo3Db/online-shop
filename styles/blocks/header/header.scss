@@ -7,16 +7,15 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	box-sizing: border-box;
+	// box-sizing: border-box;
 	@include element('header-elements') {
-		box-sizing: border-box;
+		// box-sizing: border-box;
 		padding-top: 10px;
 	};
 	@include element('search') {
-		 margin: px 0 0 5px;
+		 margin: 0 5px 0 5px;
 	};
 	@include element('icons') {
 		padding-left: 10px;
-		padding-top: 10px;
 	}
 }
