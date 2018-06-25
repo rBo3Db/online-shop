@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    @include element('main') {
+        flex-direction: column;
+        max-width: 70%;
+        box-sizing: border-box;
+    }
+    @include element('goods-in-cart') {
+        max-width: 960px;
+        min-width: 60%;
+    }
+} 

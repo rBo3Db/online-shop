@@ -1,12 +1,15 @@
+@import "variable";
 @import "mixins"; 
 @import "blocks/body/body";
 @import "blocks/header/header";
 @import "blocks/main/main";
 @import "blocks/footer/footer"; 
-@import "blocks/popup/popup";
 @import "blocks/categories-grid/categories-grid";
 @import "blocks/category/category";
 @import "blocks/icons/icons";
 @import "blocks/logo/logo";
 @import "blocks/popup/popup";
 @import "blocks/search/search";
+@import "blocks/login-form/login-form";
+@import "blocks/registration-form/registration-form";
+@import "blocks/content/content";

@@ -4,7 +4,42 @@
 	top: 50%;
 	transform: translate(-50%, -50%);
 	z-index:1001;
-	background-color: aquamarine;
-	border-radius: 10px;
+	background-color: #03dac6;
+	border-radius: $border-radius;
 	transition: width 2s, height 5s, background-color 2s, transform 2s;
+	@include modifier('zoom-popup') {
+		@include zoom-popup;
+	}
+	@include element('login-form') {
+		display: none;
+		@include modifier('show-popup') {
+			@include show-popup;
+		};
+	};
+	@include element('registration-form') {
+		display: none;
+		@include show-popup;
+	};
+	@include element('x') {
+		align-self: flex-end;
+		margin: -17px -13px 0 0;
+		color: black;
+		text-decoration: none;
+		@include modifier('responsive-element') {
+		 	@include responsive-element;
+		};
+	};
+	@include element('form-element') {
+		margin: $standart-button-margin;
+		padding: $standart-button-padding;
+		@include modifier('responsive-element') {
+			@include responsive-element;
+		};
+	};
+	@include element('link') {
+		@include modifier('responsive-element') {
+			text-decoration: none;
+			@include responsive-element;
+		}
+	}	
 }

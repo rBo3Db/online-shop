@@ -8,16 +8,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="body">
+        <div class="popup popup--zoom-popup">
+            <div id="login" class="login-form popup__login-form popup__login-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
+                Please Sign In
+                <form>
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me">
+                    Remember me
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Sign In</button>
+                </form>
+                <a href="#register" class="popup__link--responsive-element">Register</a>
+            </div>
+            <div id="register" class="registration-form popup__registration-form popup__registration-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
+                <form>
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
+                </form>
+                <a href="#login" class="popup__link--responsive-element">Sign In</a>
+            </div>
+        </div>  
         <header class="header body__header">
             <a href="categories-grid.html">
                 <div class="header__logo logo"> </div>
             </a>
             <div class="header__header-elements">
-                <input class="header__search search" type="search" name="search" placeholder="Search" pattern=".{1,}">
+                <input class="header__search search header__search--responsive-element" type="search" name="search" placeholder="Search" pattern=".{1,}">
                 <a class="header__icons icons" name="card">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-                <a class="header__icons icons" name="profile">
+                <a class="header__icons icons header__icons--responsive-element" name="profile" href="#login">
                     <i class="fas fa-user-circle"></i>
                 </a>
             </div>
@@ -26,31 +49,31 @@
             <div class="categories-grid">
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_0.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_01.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_1.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_12.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_8018582e5b743eec172a260d99602c0f_0.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_d41d8cd98f00b204e9800998ecf8427e_0.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
                 <div class="categories-grid__category category">
                     <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_d41d8cd98f00b204e9800998ecf8427e_1.jpg">
-                    <span><a>Shoes</a> (45)</span>
+                    <span><a href="Items-grid.html">Shoes</a> (45)</span>
                 </div>
             </div>
         </main>

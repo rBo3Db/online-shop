@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 #goodsInCart {
-    display:flex;
+    display: flex;
     flex-wrap: warp;
     max-width: 960px;
 	min-width: 60%;

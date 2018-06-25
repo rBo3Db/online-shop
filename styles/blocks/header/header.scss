@@ -13,9 +13,15 @@
 		padding-top: 10px;
 	};
 	@include element('search') {
-		 margin: 0 5px 0 5px;
+		margin: 0 5px 0 5px;
+		@include modifier('responsive-element') {
+			@include responsive-element;
+		};
 	};
 	@include element('icons') {
 		padding-left: 10px;
+		@include modifier('responsive-element') {
+			@include responsive-element;
+		};
 	}
 }

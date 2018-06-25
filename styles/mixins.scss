@@ -8,4 +8,31 @@
         @content;
     } 
 } 
-h1 {color: red;}
+@mixin show-popup {
+    &:target {
+        display: flex;
+    };
+}
+@mixin zoom-popup {
+    &:hover {
+        transform: scale(1.5, 1.5) translate(-33%, -33%);
+    }
+}
+@mixin responsive-element{
+    animation: link-hover;
+    &:hover { 
+        animation-name: link-hover;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        @keyframes link-hover {
+            0% {color: $primary-color}
+            50% {color: $secondary-color}
+            100% {color: $primary-color}
+        }
+    };
+    &:focus {
+        background-color: $secondary-color;
+    };
+    &:after {color: $secondary-color;};
+    &:before {color: $primary-color;};
+}
