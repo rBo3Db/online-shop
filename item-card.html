@@ -2,58 +2,78 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>item cart </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/item-cart.css">
+        <title> item-card </title>
+        <link rel="stylesheet" href="./artifacts/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
-        <header class="header">
-            <div class="logo">
-                <img alt="logo" class="logo__logo" src=".\pics\logo.png">
+    <body class="body">
+        <div class="popup popup--zoom-popup">
+            <div id="login" class="login-form popup__login-form popup__login-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
+                Please Sign In
+                <form>
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me">
+                    Remember me
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Sign In</button>
+                </form>
+                <a href="#register" class="popup__link--responsive-element">Register</a>
             </div>
-            <div class='header-buttons'>
-                <input class="header-elements__Search" type="search" name="search" placeholder="Search" pattern=".{1,}">
-                <button class="header-elements__Element" name="card">
+            <div id="register" class="registration-form popup__registration-form popup__registration-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
+                <form>
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
+                </form>
+                <a href="#login" class="popup__link--responsive-element">Sign In</a>
+            </div>
+        </div>  
+        <header class="header body__header">
+            <a href="categories-grid.html">
+                <div class="header__logo logo"> </div>
+            </a>
+            <div class="header__header-elements">
+                <input class="header__search search header__search--responsive-element" type="search" name="search" placeholder="Search" pattern=".{1,}">
+                <a class="header__icons icons" name="card">
                     <i class="fas fa-shopping-cart"></i>
-                </button>
-                <button class="header-elements__Element" name="profile">
+                </a>
+                <a class="header__icons icons header__icons--responsive-element" name="profile" href="#login">
                     <i class="fas fa-user-circle"></i>
-                </button>
+                </a>
             </div>
         </header>
-            <main class="main">
-                <div>
-                    <p><span>Electronics</span> | <span>Nexus 7</span></p>
-                    <div class="slider">
-                        <img class="slider__main-slide" name="main-pic-of-good" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                        <div>
-                            <button name><i class="fas fa-arrow-left"></i></button>
-                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                            <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
-                            <button name><i class="fas fa-arrow-right"></i></button>
-                        </div>    
-                    </div>
+        <main class="main">
+            <div style="min-height: 100%">
+                <p><span>Electronics</span> | <span>Nexus 7</span></p>
+                <div class="slider">
+                    <img class="slider__main-slide" name="main-pic-of-good" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                    <div>
+                        <button name><i class="fas fa-arrow-left"></i></button>
+                        <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                        <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                        <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                        <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                        <img name="slide" class="slider__small-slide" src="./pics/cart/googlenexus6p-1024x768.jpg">
+                        <button name><i class="fas fa-arrow-right"></i></button>
+                    </div>    
                 </div>
-                <div class="good-information">
-                    <h1 class="name-of-good">Nexus 7</h1> 
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p>Lorem ipsum dolor sit amet...</p>
-                    Price<b>$555</b>
-                    <form>
-                        Quantity
-                        <input class="quantity"type="number" pattern=".{0,}">
-                        <button>Add to cart</button>
-                        <br><i class="fab fa-twitter"></i> <i class="fab fa-facebook-square"></i> <i class="far fa-envelope"></i>
-                    </form>
-                </div>
-
-                
-            </main>
-            <footer class="footer">©</footer>
-        </div>
+            </div>
+            <div class="good-information">
+                <h1 class="name-of-good">Nexus 7</h1> 
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <p>Lorem ipsum dolor sit amet...</p>
+                Price<b>$555</b>
+                <form>
+                    Quantity
+                    <input class="quantity"type="number" pattern=".{0,}">
+                    <button>Add to cart</button>
+                </form>
+                <br><i class="fab fa-twitter"></i> <i class="fab fa-facebook-square"></i> <i class="far fa-envelope"></i>
+            </div>
+        </main>
+        <footer class="footer"><p>©</p></footer>
     </body>
 </html>

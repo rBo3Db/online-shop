@@ -1,7 +1,7 @@
 .content {
     display: flex;
-    flex-direction: row;
-    flex-flow: nowrap;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     @include element('main') {
         flex-direction: column;
         max-width: 70%;
@@ -9,6 +9,6 @@
     }
     @include element('goods-in-cart') {
         max-width: 960px;
-        min-width: 60%;
+        min-width: 60%; 
     }
 } 

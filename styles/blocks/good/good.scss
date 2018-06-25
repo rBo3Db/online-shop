@@ -1,0 +1,19 @@
+.good {
+    max-width: 960px;
+	min-width: 60%;
+    max-height: 300px;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 20px;
+    border-bottom: solid skyblue;
+    @include element('logo') {
+        align-items: flex-start;
+        align-content: left;
+        width: 30%;
+        height: 30%;
+    };
+} 

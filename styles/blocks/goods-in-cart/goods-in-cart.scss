@@ -2,4 +2,7 @@
 display: flex;
 flex-wrap: warp;
 flex-direction: column;
+@include element('good') {
+    padding-top: 20px;
+} 
 }
