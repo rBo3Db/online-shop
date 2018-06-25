@@ -1,0 +1,14 @@
+.cost-block {
+    padding: $standart-button-padding 0;
+    margin: $standart-button-margin 0;
+    @include element('quantity') {
+        @include modifier('responsive-element') {
+            @include responsive-element;
+        }
+    }
+    @include element('submit-button') {
+        @include modifier('responsive-element') {
+            @include responsive-element;
+        }
+    }
+}

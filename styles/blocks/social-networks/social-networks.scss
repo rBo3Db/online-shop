@@ -1,0 +1,9 @@
+.social-networks{
+    padding-top: $standart-button-padding;
+    @include element('social-network') {
+        padding-right: $standart-button-padding;
+        @include modifier('responsive-element') {
+            @include responsive-element; 
+        };
+    };
+}

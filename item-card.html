@@ -46,7 +46,7 @@
             </div>
         </header>
         <main class="main">
-            <div style="min-height: 100%">
+            <div>
                 <p><span>Electronics</span> | <span>Nexus 7</span></p>
                 <div class="slider">
                     <img class="slider__main-slide" name="main-pic-of-good" src="./pics/cart/googlenexus6p-1024x768.jpg">
@@ -65,13 +65,19 @@
                 <h1 class="name-of-good">Nexus 7</h1> 
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 <p>Lorem ipsum dolor sit amet...</p>
-                Price<b>$555</b>
-                <form>
-                    Quantity
-                    <input class="quantity"type="number" pattern=".{0,}">
-                    <button>Add to cart</button>
-                </form>
-                <br><i class="fab fa-twitter"></i> <i class="fab fa-facebook-square"></i> <i class="far fa-envelope"></i>
+                <div class="cost-block">
+                    Price<b>$555</b>
+                    <form>
+                        Quantity
+                        <input class="cost-block__quantity--responsive-element"type="number" pattern=".{0,}">
+                        <button type="submit" class="cost-block__submit-button--responsive-element">Add to cart</button>
+                    </form>
+                </div>
+                <div class="social-networks">
+                    <br><a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-twitter"></i></a>
+                    <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-facebook-square"></i></a>
+                    <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="far fa-envelope"></i>
+                </div>
             </div>
         </main>
         <footer class="footer"><p>©</p></footer>

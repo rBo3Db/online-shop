@@ -6,6 +6,7 @@
 }
 .slider{
     max-width: 400px;
+    min-width: 320px;
     height: 400px;
     background: white;
     display: flex;
