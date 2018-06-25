@@ -6,7 +6,7 @@
 	flex-direction: column;
 	flex: auto;
 	background: skyblue;
-	min-height: 100%;
+	min-height: 100vh;
 	font-family: sans-serif;
 		@include element('header') {
 			margin: 0 auto 30px auto;
