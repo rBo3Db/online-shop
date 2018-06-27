@@ -2,71 +2,76 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>shipping address</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/shiping-address.css">
+        <title> categories-grid </title>
+        <link rel="stylesheet" href="./artifacts/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
-        <header class="header">
-            <div class="logo">
-                <img alt="logo" class="logo__logo" src=".\pics\logo.png">
-            </div>
-            <div class='header-buttons'>
-                <input class="header-elements__Search" type="search" name="search" placeholder="Search" pattern=".{1,}">
-                <a href="#login"><button class="header-elements__Element" name="card">
-                    <i class="fas fa-shopping-cart"></i>
-                </button></a>
-                <a href="#register"><button class="header-elements__Element" name="profile">
-                    <i class="fas fa-user-circle"></i>
-                </button></a>
-            </div>
-            <div id="login">
-                <button class="x">x</button>
+    <body class="body">
+        <div class="popup popup--zoom-popup">
+            <div id="login" class="login-form popup__login-form popup__login-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
                 Please Sign In
                 <form>
-                    <input type="email" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
-                    <input type="password" name="password" placeholder="password" required pattern=".{1,}"> <br>
-                    <input type="checkbox" name="Remember me">
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me">
                     Remember me
-                    <button>Sign In</button>
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Sign In</button>
                 </form>
-                <a href="#register">Register</a>
+                <a href="#register" class="popup__link--responsive-element">Register</a>
             </div>
-            <div id="register">
-                <button class="x">x</button>
+            <div id="register" class="registration-form popup__registration-form popup__registration-form--show-popup">
+                <a class="popup__x popup__x--responsive-element" href="">x</a>
                 <form>
-                    <input type="email" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
-                    <input type="password" name="password" placeholder="password" required pattern=".{1,}"> <br>
-                    <button>Registration</button>
+                    <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
+                    <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
+                    <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
                 </form>
-                <a href="#login">Sign In</a>
+                <a href="#login" class="popup__link--responsive-element">Sign In</a>
+            </div>
+        </div>  
+        <header class="header body__header">
+            <a href="categories-grid.html">
+                <div class="header__logo logo"> </div>
+            </a>
+            <div class="header__header-elements">
+                <input class="header__search search header__search--responsive-element" type="search" name="search" placeholder="Search" pattern=".{1,}">
+                <a class="header__icons icons" name="card">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a class="header__icons icons header__icons--responsive-element" name="profile" href="#login">
+                    <i class="fas fa-user-circle"></i>
+                </a>
             </div>
         </header>
         <main class="main">
-                <form id="form">
-                    <div class="addresses">
-                        <div id="shipping-address">
+                <form class="addresses-form">
+                    <div class="addresses addresses-form__addresses">
+                        <div class="address">
                             <h1>Shipping Address </h1>
-                            <div class="shipping-address__names">
+                            <div class="address__inputs">
                                 <div>Country <input type="text" name="country" pattern=".{1,}"></div>
                                 <div>City <input type="text" name="city" pattern=".{1,}"></div>
                                 <div>Address <input type="text" name="adress" pattern=".{1,}"> </div>
                                 <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div>
                             </div>
                         </div>
-                        <div id="billing-address">
+                        <div class="address">
                                 <h1>Billing Address </h1>
-                            <div class="shipping-address__names">
+                            <div class="address__inputs">
                                 <div>Country <input type="text" name="country" pattern=".{1,}"></div>
                                 <div>City <input type="text" name="city" pattern=".{1,}"></div>
                                 <div>Address <input type="text" name="adress" pattern=".{1,}"> </div>
                                 <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div>
                             </div>
+                        
                         </div>
+                    
                     </div>
-                    <button class="submit-button"type="submit">Continue</button>
+                    <button class="addresses-form__submit-button addresses-form__submit-button--responsive-element"type="submit">Continue</button>
                 </form>
+            
             </main>
 
             <footer class="footer">©</footer>

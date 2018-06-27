@@ -1,0 +1,13 @@
+.address {
+    display:flex;
+    flex-direction: column;
+    max-width: 50%;
+    min-width: 300px;
+    align-items: center;
+    box-sizing: border-box;
+    @include element('inputs') {
+        display: flex;
+        text-align: right;
+        flex-direction: column;
+    } 
+}

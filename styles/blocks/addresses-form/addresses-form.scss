@@ -1,0 +1,13 @@
+.addresses-form {
+    text-align: center;
+    @include element('submit-button') {
+        height: 20px;
+        margin: auto;
+        @include modifier('responsive-element') {
+            @include responsive-element;
+        }
+    }
+    @include element('addresses') {
+        margin-bottom: 20px;
+    }
+}
