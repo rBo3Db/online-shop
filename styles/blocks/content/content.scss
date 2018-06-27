@@ -1,6 +1,6 @@
 .content {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
     @include element('main') {
         flex-direction: column;
