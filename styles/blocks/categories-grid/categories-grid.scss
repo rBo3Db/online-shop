@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     background-color: white;
     border-radius: 5px;
-        @include element('category') {
-            margin-bottom: 5%;
-        }
+    @include element('category') {
+        margin-bottom: 5%;
+    }
 }

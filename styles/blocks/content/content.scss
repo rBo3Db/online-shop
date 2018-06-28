@@ -2,13 +2,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    @include element('main') {
-        flex-direction: column;
-        max-width: 70%;
-        box-sizing: border-box;
-    }
-    @include element('goods-in-cart') {
-        max-width: 960px;
-        min-width: 60%; 
-    }
+    flex: 1;
+    align-content: space-between;
 } 

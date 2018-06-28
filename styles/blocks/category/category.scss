@@ -1,12 +1,25 @@
 .category {
-    width: 270px;
-    height: 270px;
     display: flex;
     flex-direction: column;
     align-items: center;
     @include element('pic-of-category') {
         margin: auto;
-        max-width: 70%;
         max-height: 70%; 
-    } 
+        max-height: 70%;
+        @include modifier ('pic-of-good-in-list') {
+            max-width: 200px;
+            max-height: 200px;
+            } 
+        } 
+    @include modifier('category-size') {
+        width: 270px;
+        height: 270px;
+    }
+    @include modifier('good-size') {
+        width: 200px;
+        height: 200px;
+    }
+    @include modifier('direction'){
+        flex-direction: row;
+    }
 }

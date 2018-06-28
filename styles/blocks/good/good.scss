@@ -10,10 +10,16 @@
     align-items: flex-start;
     padding-top: 20px;
     border-bottom: solid skyblue;
+    @include modifier('in-list') {
+        justify-content: center;
+    };
     @include element('logo') {
         align-items: flex-start;
         align-content: left;
         width: 30%;
-        height: 30%;
+        min-height: 30%;
+    };
+    @include element('quantity') {
+        width: 6em;
     };
 } 
