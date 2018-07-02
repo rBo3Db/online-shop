@@ -1,6 +1,6 @@
 .body {
 	margin: 0;
-	padding: 0 15px;
+	padding: 0;
 	display: -webkit-flex;
 	display: flex; 
 	flex-direction: column;
@@ -11,4 +11,4 @@
 		@include element('header') {
 			margin: 0 auto 30px auto;
 		}
-} 
+}  

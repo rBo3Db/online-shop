@@ -4,4 +4,7 @@
     flex-wrap: wrap;
     flex: 1;
     align-content: space-between;
+    @include modifier('reverse') {
+        flex-direction: row-reverse;
+    }
 } 
