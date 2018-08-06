@@ -1,19 +1,34 @@
 .slider{
-    max-width: 400px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    box-sizing: border-box;
-    margin-right: 10px;
-    @include element('main-slide') {
-        margin: auto;
-        max-width: 100%;
-        max-height: 100%;           
+    // max-width: 400px;
+    // background: white;
+    // display: flex;
+    // flex-direction: column;
+    // text-align: center;
+    // box-sizing: border-box;
+    // margin-right: 10px;
+    @include element('big-image') {
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 600px;
+        min-width: 300px;
+        max-height: 600px;
+        min-height: 300px;
+        background-size: cover;
     };
-    @include element('small-slide') {
-        width:20px; 
-        height: 20px;
-        margin-bottom:-5px;
-    }  
-} 
+    @include element('conteiner-for-small-photos') {
+        width: fit-content;
+        display: flex;
+        flex-flow: wrap;
+        margin-left: auto;
+        margin-right: auto;
+    };
+    @include element('small-image') {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        @include modifier('active') {
+            border: 1px solid $secondary-color;
+        };
+    }; 
+};

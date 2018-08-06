@@ -1,7 +1,7 @@
 .popup{
+	position: fixed;
 	@media screen and (min-width: 768px) {
 		display:hidden;
-		position: fixed;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
@@ -18,6 +18,8 @@
 		height: 100vh;
 		border: 0px;
 		box-sizing: border-box;
+		align-content: flex-start;
+		
 	};
 	
 	@include element('login-form') {
@@ -42,8 +44,8 @@
 
 		};
 		@media screen and (max-width: 768px) {
-			justify-self: flex-start;
-			margin: 0;
+			//justify-self: flex-start;
+			font-size: 100px;
 		}
 	};
 	@include element('form-element') {
@@ -52,6 +54,10 @@
 		@include modifier('responsive-element') {
 			@include responsive-element;
 		};
+		@media screen and (max-width: 768px) {
+			font-size: 30px;
+			width: 280px;
+		}
 	};
 	@include element('link') {
 		@include modifier('responsive-element') {
