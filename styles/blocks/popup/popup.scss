@@ -1,39 +1,80 @@
-.popup{
+.popup {
 	position: fixed;
+	display:hidden;
 	@media screen and (min-width: 768px) {
-		display:hidden;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
+		// left: 50%;
+		// top: 50%;
+		// transform: translate(-50%, -50%);
 		z-index:1001;
 		border-radius: $border-radius;
 		transition: width 2s, height 5s, background-color 2s, transform 2s;
-		@include modifier('zoom-popup') {
-			@include zoom-popup;
-		}
 	};
 	@media screen and (max-width: 768px) {
-		position: fixed;
 		width: 100%;
 		height: 100vh;
-		border: 0px;
+		border: 0px; 
 		box-sizing: border-box;
 		align-content: flex-start;
-		
 	};
 	
-	@include element('login-form') {
+	@include element('form') {
 		display: none;
+		font-size: 15pt;
+		position: fixed;
 		background-color: $secondary-color;
+		padding: 15px;
+		border: 3px solid black;
+		border-radius: 10px;
+		color: #0000cc;
+		flex-direction: column;
+		@media screen and (max-width: 768px) {
+		padding-left: 0px;
+
+		}
 		@include modifier('show-popup') {
-			@include show-popup;
+			// display: flex;
+			@media screen and (max-width: 768px) {
+				position: absolute;
+				width: 100%;
+				height: 50%;
+				border: 0px;
+				box-sizing: border-box;
+				flex-direction: column;
+				justify-content: center;
+			};
 		}
 	};
-	@include element('registration-form') {
+	@include element('blackout') {
+		background: rgba(0,0,0,0.3);
+		min-height: 100%;
+		width: 100%;
+		position: fixed;
+		overflow: hidden;
 		display: none;
-		background-color: $secondary-color;
-		@include show-popup;
-	};
+	}
+	// @include element('registration-form') {
+	// 	padding: 15px;
+	// 	border: 3px solid black;
+	// 	border-radius: 10px;
+	// 	color: #0000cc;
+	// 	flex-direction: column;
+	// 	display: none;
+	// 	background-color: $secondary-color;
+	// 	@include modifier('show-popup') {
+	// 		&:target {
+	// 			display: flex;
+	// 			@media screen and (max-width: 768px) {
+	// 				position: absolute;
+	// 				width: 100%;
+	// 				height: 50%;
+	// 				border: 0px;
+	// 				box-sizing: border-box;
+	// 				flex-direction: column;
+	// 				justify-content: center;
+	// 			};
+	// 		};
+	// 	}
+	// };
 	@include element('x') {
 		align-self: flex-end;
 		margin: -17px -13px 0 0;
@@ -57,12 +98,13 @@
 		@media screen and (max-width: 768px) {
 			font-size: 30px;
 			width: 280px;
+			height: 50px;
 		}
-	};
+	}; 
 	@include element('link') {
 		@include modifier('responsive-element') {
 			text-decoration: none;
 			@include responsive-element;
-		}
+		} 
 	}	
 }
