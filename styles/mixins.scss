@@ -17,11 +17,11 @@
 @mixin show-popup {
 
 }
-@mixin zoom-popup {
-    &:hover {
-        transform: scale(1.5, 1.5) translate(-33%, -33%);
-    }
-}
+// @mixin zoom-popup {
+//     &:hover {
+//         transform: scale(1.5, 1.5) translate(-33%, -33%);
+//     }
+// }
 @mixin responsive-element{
     animation: link-hover;
     &:hover { 

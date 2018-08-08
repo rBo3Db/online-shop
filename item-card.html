@@ -14,17 +14,18 @@
     <body class="body">
         <div class="popup popup--zoom-popup">
             <div id="login" class="popup__form popup__form--show-popup">
-                <a class="popup__x popup__x--responsive-element" href="">x</a>
+                <a class="popup__x popup__x--responsive-element">x</a>
                 Please Sign In
                 <form>
-                    
                     <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
                     <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
-                    <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me">
-                    Remember me
+                    <p>
+                        <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me"><br>
+                        Remember me
+                    </p>
                     <button type="submit" class="popup__form-element popup__form-element--responsive-element">Sign In</button>
                 </form>
-                <a class="popup-link popup__link--responsive-element">Register</a>
+                <a class="popup__link popup__link--register popup__link--responsive-element">Register</a>
             </div>
             <div id="register" class="popup__form popup__form--show-popup">
                 <a class="popup__x popup__x--responsive-element" href="">x</a>
@@ -33,7 +34,7 @@
                     <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
                     <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
                 </form>
-                <a class="popup-link popup__link--responsive-element">Sign In</a>
+                <a class="popup__link popup__link--login popup__link--responsive-element">Sign In</a>
             </div>
         </div>  
         <header class="header body__header">
@@ -45,7 +46,7 @@
                 <a class="header__icons icons" name="card" href="cart.html">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-                <a class="popup-link header__icons icons header__icons--responsive-element" name="profile">
+                <a class="popup__link popup__link--login header__icons icons header__icons--responsive-element" name="profile">
                     <i class="fas fa-user-circle"></i>
                 </a>
             </div>

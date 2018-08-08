@@ -1,17 +1,18 @@
 .popup {
 	position: fixed;
 	display:hidden;
+	z-index:1001;
 	@media screen and (min-width: 768px) {
-		// left: 50%;
-		// top: 50%;
+		left: 50%;
+		top: 50%;
 		// transform: translate(-50%, -50%);
-		z-index:1001;
+		
 		border-radius: $border-radius;
 		transition: width 2s, height 5s, background-color 2s, transform 2s;
 	};
 	@media screen and (max-width: 768px) {
 		width: 100%;
-		height: 100vh;
+		// height: 100vh; 
 		border: 0px; 
 		box-sizing: border-box;
 		align-content: flex-start;
@@ -20,29 +21,33 @@
 	@include element('form') {
 		display: none;
 		font-size: 15pt;
-		position: fixed;
+		// position: fixed;
 		background-color: $secondary-color;
 		padding: 15px;
 		border: 3px solid black;
 		border-radius: 10px;
 		color: #0000cc;
 		flex-direction: column;
+		justify-content: center;
+		@media screen and (min-width: 768px) {
+			transform: translate(-50%, -50%);
+		};
 		@media screen and (max-width: 768px) {
-		padding-left: 0px;
-
-		}
-		@include modifier('show-popup') {
-			// display: flex;
-			@media screen and (max-width: 768px) {
-				position: absolute;
-				width: 100%;
-				height: 50%;
-				border: 0px;
-				box-sizing: border-box;
-				flex-direction: column;
-				justify-content: center;
-			};
-		}
+			margin-left: 0px;
+			min-height: 100%;
+		};
+		// @include modifier('show-popup') {
+		// 	display: flex;
+		// 	@media screen and (max-width: 768px) {
+		// 		// position: absolute;
+		// 		// width: 100%;
+		// 		
+		// 		border: 0px;
+		// 		box-sizing: border-box;
+		// 		flex-direction: column;
+		// 		justify-content: center;
+		// 	};
+		// }
 	};
 	@include element('blackout') {
 		background: rgba(0,0,0,0.3);
@@ -51,7 +56,7 @@
 		position: fixed;
 		overflow: hidden;
 		display: none;
-	}
+	};
 	// @include element('registration-form') {
 	// 	padding: 15px;
 	// 	border: 3px solid black;
@@ -77,17 +82,19 @@
 	// };
 	@include element('x') {
 		align-self: flex-end;
-		margin: -17px -13px 0 0;
 		color: black;
 		text-decoration: none;
-		@include modifier('responsive-element') {
-			 @include responsive-element;
-
+		@media screen and (max-width: 768px) {
+			margin: -17px -13px 0 0;
+			@include modifier('responsive-element') {
+				@include responsive-element;
+			};
 		};
 		@media screen and (max-width: 768px) {
 			//justify-self: flex-start;
 			font-size: 100px;
-		}
+			margin: -50px -13px 0 0;
+		};
 	};
 	@include element('form-element') {
 		margin: $standart-button-margin;
@@ -97,14 +104,17 @@
 		};
 		@media screen and (max-width: 768px) {
 			font-size: 30px;
-			width: 280px;
+			width: 90%;
 			height: 50px;
-		}
+		};
 	}; 
 	@include element('link') {
+		@media screen and (max-width: 768px) {
+			font-size: 30px;
+		};
 		@include modifier('responsive-element') {
 			text-decoration: none;
 			@include responsive-element;
-		} 
-	}	
-}
+		};
+	};
+};

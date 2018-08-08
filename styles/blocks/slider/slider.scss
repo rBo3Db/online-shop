@@ -13,8 +13,9 @@
         max-width: 600px;
         min-width: 300px;
         max-height: 600px;
-        min-height: 300px;
+        min-height: 400px;
         background-size: cover;
+        background-position-x: center;
     };
     @include element('conteiner-for-small-photos') {
         width: fit-content;
@@ -22,6 +23,9 @@
         flex-flow: wrap;
         margin-left: auto;
         margin-right: auto;
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     };
     @include element('small-image') {
         width: 100px;
