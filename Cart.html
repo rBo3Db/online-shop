@@ -6,29 +6,35 @@
         <link rel="stylesheet" href="./artifacts/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup">
-            <div id="login" class="login-form popup__login-form popup__login-form--show-popup">
-                <a class="popup__x popup__x--responsive-element" href="">x</a>
+            <div id="login" class="popup__form popup__form--show-popup">
+                <a class="popup__x popup__x--responsive-element">x</a>
                 Please Sign In
                 <form>
                     <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
                     <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
-                    <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me">
-                    Remember me
+                    <p>
+                        <input type="checkbox" class="popup__form-element popup__form-element--responsive-element" name="Remember me"><br>
+                        Remember me
+                    </p>
                     <button type="submit" class="popup__form-element popup__form-element--responsive-element">Sign In</button>
                 </form>
-                <a href="#register" class="popup__link--responsive-element">Register</a>
+                <a class="popup__link popup__link--register popup__link--responsive-element">Register</a>
             </div>
-            <div id="register" class="registration-form popup__registration-form popup__registration-form--show-popup">
+            <div id="register" class="popup__form popup__form--show-popup">
                 <a class="popup__x popup__x--responsive-element" href="">x</a>
                 <form>
                     <input type="email" class="popup__form-element popup__form-element--responsive-element" name="email" placeholder="email" autofocus required pattern=".{3,}"> <br>
                     <input type="password" class="popup__form-element popup__form-element--responsive-element" name="password" placeholder="password" required pattern=".{1,}"> <br>
                     <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
                 </form>
-                <a href="#login" class="popup__link--responsive-element">Sign In</a>
+                <a class="popup__link popup__link--login popup__link--responsive-element">Sign In</a>
             </div>
         </div>  
         <header class="header body__header">
@@ -128,5 +134,6 @@
             </main>
         </div>
         <footer class="footer">©</footer>
+        <script src="./scripts/popup.js"></script>
     </body>
 </html>

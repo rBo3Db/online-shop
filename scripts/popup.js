@@ -29,6 +29,10 @@ $(document).ready(function() {
     // $(window).scroll(centerBox);
     // centerBox();    
 
+    $('a[href="#login"]').click(function() {
+        $('.popup__blackout').show();
+        $('#login').css('display','flex');
+    })
     $('.popup__link--login').click(function() {
         $('#register').hide();
         $('.popup__blackout').show();
