@@ -5,10 +5,12 @@
         <title> categories-grid </title>
         <link rel="stylesheet" href="./artifacts/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        <script
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup">
@@ -51,10 +53,24 @@
             </div>
         </header>
         <main class="main">
-            <div class="category category--category-size">
-                <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_0.jpg">
-                <span><a href="Items-grid.html">Shoes</a> (45)</span>
-            </div>
+            <script type="ddd" id="category" >
+                <div class="category category--category-size">
+                    <img alt="photo of category" class="category__pic-of-category" src="<%= products[i].photo %>">
+                    <span><a href="Items-grid.html"><%= products[i].name%></a> (45)</span>
+                </div>
+            </script>
+            <script src="./scripts/objects/categoriesObject.js"></script><script>
+
+                for (var i = 0; i < products.length;i++) {
+                    var categories = _.template(document.getElementById('category').innerHTML)(products);
+
+                    var div = document.createElement('div');
+                    div.innerHTML = categories;
+                    document.getElementsByClassName('main')[0].appendChild(div);
+                }
+
+            </script>
+            <!-- 
             <div class="category category--category-size">
                 <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_91a0aec1f7e49f08f81c7c25bcce9fd1_01.jpg">
                 <span><a href="Items-grid.html">Shoes</a> (45)</span>
@@ -78,9 +94,11 @@
             <div class="category category--category-size">
                 <img alt="photo of category" class="category__pic-of-category" src=".\pics\categories-grid\big_d41d8cd98f00b204e9800998ecf8427e_1.jpg">
                 <span><a href="Items-grid.html">Shoes</a> (45)</span>
-            </div>
+            </div> -->
         </main>
         <footer class="footer"><p>©</p></footer>
+        
+
         <script src="./scripts/popup.js"></script>
     </body>
 </html>

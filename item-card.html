@@ -10,10 +10,13 @@
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+        
     </head>
     <body class="body">
+        
         <div class="popup popup--zoom-popup">
-            <div id="login" class="popup__form popup__form--show-popup">
+            <!-- <div id="login" class="popup__form popup__form--show-popup">
                 <a class="popup__x popup__x--responsive-element">x</a>
                 Please Sign In
                 <form>
@@ -35,8 +38,9 @@
                     <button type="submit" class="popup__form-element popup__form-element--responsive-element">Registration</button>
                 </form>
                 <a class="popup__link popup__link--login popup__link--responsive-element">Sign In</a>
-            </div>
-        </div>  
+            </div> -->
+        </div>
+        
         <header class="header body__header">
             <a href="categories-grid.html">
                 <div class="header__logo logo"> </div>
@@ -87,5 +91,6 @@
         <footer class="footer"><p>©</p></footer>
         <script src="./scripts/slider.js"></script>
         <script src="./scripts/popup.js"></script>
+        <script src='./tpl/popup.tpl.js'></script>
     </body>
 </html>

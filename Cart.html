@@ -10,6 +10,7 @@
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup">
@@ -57,15 +58,26 @@
                 <a href="shipping-Address.html"><button>Proceed to CheckOut</button></a>
             </aside>
             <main class="main">
-                    <div class="good">
-                        <img name="Photo-of-good-in-card" class="good__logo"src="./pics/cart/googlenexus6p-1024x768.jpg">
-                        <span class="">Nexus 7</span>
-                        Quantity
-                        <input class="good__quantity" type="number" name="quantity" value="1">
-                        <span class="priceOfGood">$777</span>
-                        <span><a class="good__link-remove-good-in-card">Remove</a></span>
-                    </div>
-                    <div class="good">
+                    <script type="text/template" id="good-template">
+                        <div class="good">
+                            <img name="Photo-of-good-in-card" class="good__logo"src="./pics/cart/googlenexus6p-1024x768.jpg">
+                            <span class="">Nexus 7</span>
+                            Quantity
+                            <input class="good__quantity" type="number" name="quantity" value="1">
+                            <span class="priceOfGood">$777</span>
+                            <span><a class="good__link-remove-good-in-card">Remove</a></span>
+                        </div>
+                    </script>
+                    <script>
+                        for (var i = 0; i<10; i++) {
+                            var tmpl = _.template(document.getElementById('good-template').innerHTML);
+                        
+                            var result = tmpl({ title: "Заполнение товарами" });
+                        
+                            document.write(result);
+                        }
+                    </script>
+                    <!-- <div class="good">
                         <img name="Photo-of-good-in-card" class="good__logo"src="./pics/cart/googlenexus6p-1024x768.jpg">
                         <span class="">Nexus 7</span>
                         Quantity
@@ -124,7 +136,7 @@
                             <span class="priceOfGood">$777</span>
                             <span><a class="good__link-remove-good-in-card">Remove</a></span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="totalCostUnderGoods">
                     Total: <span class="totalCostInCartOfGoods">$768</span>

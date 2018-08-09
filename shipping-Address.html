@@ -10,6 +10,7 @@
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup">
@@ -57,29 +58,41 @@
                         <div class="address">
                             <h1>Shipping Address </h1>
                             <div class="address__inputs">
-                                <div>Country <input type="text" name="country" pattern=".{1,}"></div>
+                                <!-- <div>Country <input type="text" name="country" pattern=".{1,}"></div>
                                 <div>City <input type="text" name="city" pattern=".{1,}"></div>
                                 <div>Address <input type="text" name="adress" pattern=".{1,}"> </div>
-                                <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div>
+                                <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div> -->
+                                <script type="text/template" id="adress-template">
+                                    <div>Country <input type="text" name="country" pattern=".{1,}"></div>
+                                    <div>City <input type="text" name="city" pattern=".{1,}"></div>
+                                    <div>Address <input type="text" name="adress" pattern=".{1,}"> </div>
+                                    <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div>
+                                </script>
+                                <script>
+                                        var tmpl = _.template(document.getElementById('adress-template').innerHTML);
+                                        var result = tmpl({ title: "Заполнение товарами" });
+                                        document.write(result);
+                                </script>
                             </div>
                         </div>
                         <div class="address">
                                 <h1>Billing Address </h1>
                             <div class="address__inputs">
-                                <div>Country <input type="text" name="country" pattern=".{1,}"></div>
+                                <!-- <div>Country <input type="text" name="country" pattern=".{1,}"></div>
                                 <div>City <input type="text" name="city" pattern=".{1,}"></div>
                                 <div>Address <input type="text" name="adress" pattern=".{1,}"> </div>
-                                <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div>
+                                <div>ZIP <input type="text" name="zip" pattern=".{1,}"></div> -->
+                                <script>
+                                    var tmpl = _.template(document.getElementById('adress-template').innerHTML);
+                                    var result = tmpl({ title: "Заполнение товарами" });
+                                    document.write(result);
+                                </script>
                             </div>
-                        
-                        </div>
-                    
+                        </div>           
                     </div>
                     <button class="addresses-form__submit-button addresses-form__submit-button--responsive-element"type="submit">Continue</button>
                 </form>
-            
             </main>
-
             <footer class="footer">©</footer>
         </div>
         <script src="./scripts/popup.js"></script>
