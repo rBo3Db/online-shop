@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> index </title>
+        <link rel="stylesheet" href="./artifacts/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    </head>
+    <body class="body">
+        <div class="popup popup--zoom-popup"></div>  
+
+        <header class="header body__header"></header>
+    <script>
+        var tmpl = _.template('./tpl/categories-grid.html'.innerHTML);
+                        
+        var result = tmpl({ title: "Заполнение товарами" });
+    
+        document.write(result);
+    </script>
+    <footer class="footer">©</footer>
+    <script src='./tpl/header.tpl.js'></script>
+    <script src='./tpl/popup.tpl.js'></script>
+    <script src='./scripts/objects/categoriesObject.js'></script>
+    <script src='./scripts/objects/goodObject.js'> </script>
+    <script src='./scripts/categories.js'></script>
+    <script src="./scripts/popup.js"></script>
+    </body>
+</html>
