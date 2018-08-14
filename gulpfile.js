@@ -46,4 +46,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest('./app/'));
 });
 
+// require('handlebars');
+
 gulp.task('default', ['sass','js','watch', 'browserSync']);

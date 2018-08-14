@@ -11,19 +11,115 @@
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+        <script src="./scripts/objects/categoriesObject.js"></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup"></div>  
 
         <header class="header body__header"></header>
-        <script>
+        <div class="global-conteiner">
+            <main class="main"></main>
+        </div>    
 
-        </script>
+            <script type="text/template" id="categories">
+                <div class="category category--category-size" id="<%- i %>">
+                    <img alt="photo of category" class="category__pic-of-category" src="<%= products[i].photo %>">
+                    <span><%= products[i].name%> (<%=products[i].goods.length%>)</span>
+                </div>
+            </script>
+
+            <script type="text/template" id="items-grid">
+                <div class="change-view"><a class="icons header__icons--responsive-element">List View</a></div>
+                <div class="content">
+                    <nav class="widget">
+                        <h3 class="widget__title">Категории</h3>
+                        <ul class="widget__list">
+                        </ul>
+                    </nav>
+                    <h1></h1>
+                    <main class="main">
+
+                    </main>
+                </div>
+            </script>
+            <script type="text/template" id="goods-in-grid">
+                <div class="category category--good-size" id="<%- j %>">
+                        <img alt="photo of good" src="<%= products[i].goods[j].photo %>"class="category__pic-of-category">
+                        <h3><a class="NameOfGood"><%= products[i].goods[j].name %></a></h3>
+                        <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
+                    </div>
+            </script>
+            <script type="text/template" id="goods-in-list">
+                <div class="good good--in-list"  id="<%- j %>">
+                    <img alt="photo of good in list" class="good__logo"src="<%= products[i].goods[j].photo %>">
+                    <div class="good-name-and-cost">
+                        <h1 class="NameOfGood"><%= products[i].goods[j].name %</h1>
+                        <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
+                        <p class="ShortDescriptionOfGoodInList"><%= products[i].goods[j].description %></p>
+                        <button id="<%- j %>">Add to card</button>
+                    </div>
+                </div>
+            </script>
+
+
+            <script>
+                var i;
+                var j;
+                let howMuchCategories = products.length;
+                //создали базовую страницу с категриями
+                function createPageFromTemplate(insertThat, insertIn, i, j) {
+                    var categories = _.template(document.getElementById(insertThat).innerHTML)(products);
+                    var div = document.createElement('div');
+                    div.innerHTML = categories;
+                    document.getElementsByClassName(insertIn)[0].appendChild(div);
+                };
+                for ( i = 0; i < howMuchCategories ; i++ ) {
+                    createPageFromTemplate('categories','main', i)
+                };
+                // отловили клик по категории
+                $('.category').click(function() {
+                    i = +this.id;
+                    $(".main").remove();
+                    //создали страницу с товаром
+                    //  {
+                        createPageFromTemplate('items-grid','global-conteiner');
+                        for (j = 0; j < products[i].goods.length ; j++ ) {
+                            createPageFromTemplate('goods-in-grid','main',i, j);
+
+                        };
+                    // $('.category#' + idOfCategory)
+                    //создали список категорий слева
+
+                    for (d = 0; d< howMuchCategories;d++) {
+                        var categories = _.template('<li class="widget__link" id = '+ d +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ products[d].name +' </a></li>')(products);
+                        // var li = document.createElement('li');
+                        // li.innerHTML = categories;
+                        $('ul').append(categories);
+                        // document.getElementsByClassName('widget__list')[0].appendChild(li);
+                    }
+                    //клик по панели слева
+                    $('li').click(function() {
+                        
+                        $('main').empty();
+                        i = Number(this.id);
+                        for (j = 0; j < products[i].goods.length ; j++ ) {
+                            createPageFromTemplate('goods-in-grid','main',i, j);
+                        };  
+                    });
+                    $('change-view').click(function() {
+                                                
+                        $('main').empty();
+                        i = Number(this.id);
+                        for (j = 0; j < products[i].goods.length ; j++ ) {
+                            createPageFromTemplate('goods-in-list','main',i, j);
+                        };  
+                    })
+                });
+            </script>
+            
         <footer class="footer">©</footer>
         <script src='./tpl/header.tpl.js'></script>
         <script src='./tpl/popup.tpl.js'></script>
-        <script src='./scripts/objects/categoriesObject.js'></script>
-        <script src='./scripts/objects/goodObject.js'> </script>
         <script src='./scripts/categories.js'></script>
         <script src="./scripts/popup.js"></script>
         <script src='./scripts/index.js'></script>
