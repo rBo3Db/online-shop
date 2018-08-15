@@ -29,7 +29,7 @@
             </script>
 
             <script type="text/template" id="items-grid">
-                <div class="change-view"><a class="icons header__icons--responsive-element">List View</a></div>
+                <div class="change-view" id=""><a class="icons header__icons--responsive-element">List View</a></div>
                 <div class="content">
                     <nav class="widget">
                         <h3 class="widget__title">Категории</h3>
@@ -43,17 +43,17 @@
                 </div>
             </script>
             <script type="text/template" id="goods-in-grid">
-                <div class="category category--good-size" id="<%- j %>">
+                <div class="category category--good-size" id="<%- j %> good">
                         <img alt="photo of good" src="<%= products[i].goods[j].photo %>"class="category__pic-of-category">
                         <h3><a class="NameOfGood"><%= products[i].goods[j].name %></a></h3>
                         <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
                     </div>
             </script>
             <script type="text/template" id="goods-in-list">
-                <div class="good good--in-list"  id="<%- j %>">
+                <div class="good good--in-list"  id="<%- j %> good">
                     <img alt="photo of good in list" class="good__logo"src="<%= products[i].goods[j].photo %>">
                     <div class="good-name-and-cost">
-                        <h1 class="NameOfGood"><%= products[i].goods[j].name %</h1>
+                        <h1 class="NameOfGood"><%= products[i].goods[j].name %></h1>
                         <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
                         <p class="ShortDescriptionOfGoodInList"><%= products[i].goods[j].description %></p>
                         <button id="<%- j %>">Add to card</button>
@@ -61,6 +61,39 @@
                 </div>
             </script>
 
+            <script type="text/template" id="item-card">
+                <div class='slider'>
+                    <p><span>products[i].name%</span> | <span><%= products[i].goods[j].name %></span></p>
+                    <div class='slider__big-image' id="dropBigImage">
+                    </div>
+                    <div class='slider__conteiner-for-small-photos'id="container" onclick="slider.changeByClick(event)">
+                        <button class="slider__arrow-left">
+                            <
+                        </button>
+                        <button class="slider__arrow-right">
+                            >
+                        </button>
+                    </div>
+                </div>
+                <div class="good-information">
+                    <h1 class="name-of-good"><%= products[i].goods[j].name %></h1> 
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <p><%= products[i].goods[j].description %></p>
+                    <div class="cost-block">
+                        Price<b>$<%= products[i].goods[j].price %></b>
+                        <form>
+                            Quantity
+                            <input class="cost-block__quantity--responsive-element"type="number" required value="1">
+                            <button type="submit" class="cost-block__submit-button--responsive-element">Add to cart</button>
+                        </form>
+                    </div>
+                    <div class="social-networks">
+                        <br><a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-twitter"></i></a>
+                        <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-facebook-square"></i></a>
+                        <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="far fa-envelope"></i>
+                    </div>
+                </div>
+            </script>
 
             <script>
                 var i;
@@ -106,14 +139,17 @@
                             createPageFromTemplate('goods-in-grid','main',i, j);
                         };  
                     });
-                    $('change-view').click(function() {
-                                                
+                    $('.change-view').click(function() {
                         $('main').empty();
-                        i = Number(this.id);
+                        // i = Number(this.id);
                         for (j = 0; j < products[i].goods.length ; j++ ) {
                             createPageFromTemplate('goods-in-list','main',i, j);
                         };  
-                    })
+                    });
+                    $('#good').click(function() {
+                        $('main').empty();
+                        createPageFromTemplate('item-card','main')
+                    });
                 });
             </script>
             
