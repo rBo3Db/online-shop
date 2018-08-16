@@ -3,13 +3,13 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var browserify = require('browserify');
 var browserSync = require('browser-sync');
-source = require('vinyl-source-stream');
+// source = require('vinyl-source-stream');
 const autoprefixer = require('gulp-autoprefixer');
 const minify = require('gulp-minify');
 var  htmlclean = require('gulp-htmlclean');
 // var source = require('gulp-bundle');
 gulp.task('html', function() {
-    gulp.src('*.html')
+    gulp.src('index.html')
         .pipe(gulp.dest('./app/'))
         .pipe(browserSync.reload({
             stream: true
@@ -17,7 +17,7 @@ gulp.task('html', function() {
 });
 gulp.task('img', function() {
     gulp.src('./pics/**/**/*')
-        .pipe(gulp.dest('./app/img'))
+        .pipe(gulp.dest('./app/pics'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -38,21 +38,25 @@ gulp.task('sass', function() {
 gulp.task('tpl', function() {
     gulp.src('./tpl/*')
     .pipe(gulp.dest('./app/tpl/'))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
 });  
 gulp.task('js', function() {
-    gulp.src('./scripts/**/*')
-    // .pipe(minify())
-    // .pipe(concat('min.js'))
+    gulp.src(['./scripts/**/*'])
+    
+    .pipe(concat('min.js'))
+    .pipe(minify())
     .pipe(gulp.dest('./app/scripts/'))
-    // .pipe(browserSync.reload({
-    //     stream: true
-    // }));
+    .pipe(browserSync.reload({
+        stream: true
+    }));
 });
 // gulp.task('browserify', function() { 
-// return browserify('./app/js/min-min.js') 
+// return browserify('./app/scripts/min.js') 
 //     .bundle() 
 //     .pipe(source('bundle.js')) 
-//     .pipe(gulp.dest('./app/js/'));
+//     .pipe(gulp.dest('./app/scripts/'));
 // });
 
 gulp.task('watch', function(){
@@ -86,4 +90,6 @@ gulp.task('browserSync', function() {
 
 // require('handlebars');
 
-gulp.task('default', ['sass','img','html','watch','tpl','js', 'browserSync']);
+gulp.task('default', ['sass','img','html','watch','tpl','js', 'browserSync'
+// ,'browserify'
+]);
