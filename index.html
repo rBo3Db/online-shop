@@ -13,6 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
         <script src="./scripts/objects/categoriesObject.js"></script>
         <script src='./scripts/min-min.js'></script>
+        <script src='./scripts/slider.js'></script>
     </head>
     <body class="body">
         <div class="popup popup--zoom-popup"></div>  
@@ -44,14 +45,14 @@
                 </div>
             </script>
             <script type="text/template" id="goods-in-grid">
-                <div class="category category--good-size" id="<%- j %> good">
+                <div class="category category--good-size" id="<%- j %>">
                         <img alt="photo of good" src="<%= products[i].goods[j].photo %>"class="category__pic-of-category">
                         <h3><a class="NameOfGood"><%= products[i].goods[j].name %></a></h3>
                         <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
                     </div>
             </script>
             <script type="text/template" id="goods-in-list">
-                <div class="good good--in-list"  id="<%- j %> good">
+                <div class="good good--in-list"  id="<%- j %>">
                     <img alt="photo of good in list" class="good__logo"src="<%= products[i].goods[j].photo %>">
                     <div class="good-name-and-cost">
                         <h1 class="NameOfGood"><%= products[i].goods[j].name %></h1>
@@ -63,37 +64,39 @@
             </script>
 
             <script type="text/template" id="item-card">
-                <div class='slider'>
-                    <p><span>products[i].name%</span> | <span><%= products[i].goods[j].name %></span></p>
-                    <div class='slider__big-image' id="dropBigImage">
+                <main class="main">
+                    <div class='slider'>
+                        <p><span><%products[i].name%></span> | <span><%= products[i].goods[j].name %></span></p>
+                        <div class='slider__big-image' id="dropBigImage">
+                        </div>
+                        <div class='slider__conteiner-for-small-photos'id="containerOfSlider">
+                            <button class="slider__arrow-left">
+                                <
+                            </button>
+                            <button class="slider__arrow-right">
+                                >
+                            </button>
+                        </div>
                     </div>
-                    <div class='slider__conteiner-for-small-photos'id="container" onclick="slider.changeByClick(event)">
-                        <button class="slider__arrow-left">
-                            <
-                        </button>
-                        <button class="slider__arrow-right">
-                            >
-                        </button>
+                    <div class="good-information">
+                        <h1 class="name-of-good"><%= products[i].goods[j].name %></h1> 
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <p><%= products[i].goods[j].description %></p>
+                        <div class="cost-block">
+                            Price<b>$<%= products[i].goods[j].price %></b>
+                            <form>
+                                Quantity
+                                <input class="cost-block__quantity--responsive-element"type="number" required value="1">
+                                <button type="submit" class="cost-block__submit-button--responsive-element">Add to cart</button>
+                            </form>
+                        </div>
+                        <div class="social-networks">
+                            <br><a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-twitter"></i></a>
+                            <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-facebook-square"></i></a>
+                            <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="far fa-envelope"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="good-information">
-                    <h1 class="name-of-good"><%= products[i].goods[j].name %></h1> 
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <p><%= products[i].goods[j].description %></p>
-                    <div class="cost-block">
-                        Price<b>$<%= products[i].goods[j].price %></b>
-                        <form>
-                            Quantity
-                            <input class="cost-block__quantity--responsive-element"type="number" required value="1">
-                            <button type="submit" class="cost-block__submit-button--responsive-element">Add to cart</button>
-                        </form>
-                    </div>
-                    <div class="social-networks">
-                        <br><a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-twitter"></i></a>
-                        <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="fab fa-facebook-square"></i></a>
-                        <a class="social-networks__social-network social-networks__social-network--responsive-element"><i class="far fa-envelope"></i>
-                    </div>
-                </div>
+                </main>
             </script>
 
             <script>
@@ -120,7 +123,6 @@
                         createPageFromTemplate('items-grid','global-conteiner');
                         for (j = 0; j < products[i].goods.length ; j++ ) {
                             createPageFromTemplate('goods-in-grid','main',i, j);
-
                         };
                     // $('.category#' + idOfCategory)
                     //создали список категорий слева
@@ -148,20 +150,32 @@
                             createPageFromTemplate('goods-in-list','main',i, j);
                         };  
                     });
-                    $('#good').click(function() {
-                        $('main').empty();
-                        createPageFromTemplate('item-card','main');
+                    $('body').on('click','.category',function() {
+                        $('.global-conteiner').remove();//chistim vse
+                        
+                        j = Number(this.id);
+                        createPageFromTemplate('item-card','body', i , j);
+                        let slider = new Slider([   
+                            './pics/item-card/slider/1.jpg',
+                            './pics/item-card/slider/2.jpg',
+                            './pics/item-card/slider/3.jpg',
+                            './pics/item-card/slider/4.jpg',
+                            './pics/item-card/slider/5.jpg',
+                            './pics/item-card/slider/6.jpg', 
+                            './pics/item-card/slider/7.jpg']);
+                        slider.init();
+                        $('.slider__conteiner-for-small-photos').click(function(event){slider.changeByClick(event)});
                     });
                 });
 
-                
+
             </script>
             
         <footer class="footer">©</footer>
         <script src='./tpl/header.tpl.js'></script>
-        <script src='./tpl/popup.tpl.js'></script>>
+        <script src='./tpl/popup.tpl.js'></script>
         <script src="./scripts/popup.js"></script>
         <script src='./scripts/index.js'></script>
-        
+        <script src='./scripts/search.js'></script>
     </body>
 </html>

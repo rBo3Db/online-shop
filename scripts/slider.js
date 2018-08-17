@@ -1,13 +1,7 @@
-$(document).ready(function() {
+// $(document).ready(function(slides) {
     class Slider {
-        constructor() {
-            this.slides = [ './pics/item-card/slider/1.jpg',
-                            './pics/item-card/slider/2.jpg',
-                            './pics/item-card/slider/3.jpg',
-                            './pics/item-card/slider/4.jpg',
-                            './pics/item-card/slider/5.jpg',
-                            './pics/item-card/slider/6.jpg', 
-                            './pics/item-card/slider/7.jpg'];
+        constructor(slides) {
+            this.slides = slides;
             this.activSlide = Math.floor(this.slides.length/2);
             this.oldActivSlide = this.activSlide;
         }
@@ -21,7 +15,7 @@ $(document).ready(function() {
             let right = document.getElementsByClassName('slider__arrow-right');        
             for(let i = 0; i < this.slides.length; i++) {
                 let slide = document.createElement('img');
-                document.getElementById('container').insertBefore(slide, right[0]);
+                document.getElementById('containerOfSlider').insertBefore(slide, right[0]);
                 slide.setAttribute('class','slider__small-image');
                 slide.setAttribute('src',this.slides[i]);
                 slide.setAttribute('id',i);
@@ -38,9 +32,12 @@ $(document).ready(function() {
         setMain(image) {
             document.getElementById("dropBigImage").style.backgroundImage = "url("+image+")";
         }
-
+        //функцию ниже нужно навесить на блок, где кнопки и иконки 
+        //
+        //типо так - slider.changeByClick(event) slider
+        
         changeByClick(ev) {
-            if ( ev.target.id == 'container') { //click on container
+            if ( ev.target.id == 'containerOfSlider') { //click on containerOfSlider
             } else {
                 this.oldActivSlide = this.activSlide;
                 if (ev.target.innerText == '<') {
@@ -68,10 +65,7 @@ $(document).ready(function() {
             ++this.activSlide;
         }
     }
-
-    let slider = new Slider();
-    slider.init();
     // setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
     // 	slider.changeByClick(MouseEvent.target.className("slider__arrow-right"));
     // },50);
-});
+// });
