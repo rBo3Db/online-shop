@@ -3,7 +3,6 @@ var products = [
         id: 1,
         name:'cut-off wheels',
         photo: './pics/categories-grid/big_91a0aec1f7e49f08f81c7c25bcce9fd1_01.jpg',
-
         goods: [
             {
             name:'cut-off wheel',

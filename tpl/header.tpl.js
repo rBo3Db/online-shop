@@ -10,6 +10,7 @@ var header = _.template(`
     <a class="popup__link popup__link--login header__icons icons header__icons--responsive-element" name="profile">
         <i class="fas fa-user-circle"></i>
     </a>
+    <div class="search__results"></div>
 </div>
 `)();
 

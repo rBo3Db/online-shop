@@ -21,6 +21,7 @@
         <header class="header body__header"></header>
         <div class="global-conteiner">
             <main class="main"></main>
+            <!-- <div class="search__results"></div> -->
         </div>    
 
             <script type="text/template" id="categories">
@@ -46,10 +47,10 @@
             </script>
             <script type="text/template" id="goods-in-grid">
                 <div class="category category--good-size" id="<%- j %>">
-                        <img alt="photo of good" src="<%= products[i].goods[j].photo %>"class="category__pic-of-category">
-                        <h3><a class="NameOfGood"><%= products[i].goods[j].name %></a></h3>
-                        <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
-                    </div>
+                    <img alt="photo of good" src="<%= products[i].goods[j].photo %>"class="category__pic-of-category">
+                    <h3><a class="NameOfGood"><%= products[i].goods[j].name %></a></h3>
+                    <b class="priceOfGood">$<%= products[i].goods[j].price %></b>
+                </div>
             </script>
             <script type="text/template" id="goods-in-list">
                 <div class="good good--in-list"  id="<%- j %>">
@@ -114,6 +115,9 @@
                 for ( i = 0; i < howMuchCategories ; i++ ) {
                     createPageFromTemplate('categories','main', i)
                 };
+                // _.forEach(products, function(value, kay) {
+                //     createPageFromTemplate('categories','main', kay)
+                // })
                 // отловили клик по категории
                 $('.category').click(function() {
                     i = +this.id;
@@ -173,9 +177,10 @@
             
         <footer class="footer">©</footer>
         <script src='./tpl/header.tpl.js'></script>
+        <script src='./scripts/search.js'></script>
         <script src='./tpl/popup.tpl.js'></script>
         <script src="./scripts/popup.js"></script>
         <script src='./scripts/index.js'></script>
-        <script src='./scripts/search.js'></script>
+        
     </body>
 </html>
