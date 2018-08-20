@@ -51,7 +51,7 @@ $(document).ready(function() {
                         './pics/item-card/slider/7.jpg']);
                     slider.init();
                     $('.slider__conteiner-for-small-photos').click(function(event){
-                        slider.changeByClick(event)
+                        slider.changeByClick(event);
                     });
                 });
             });
