@@ -5,7 +5,9 @@
   "main": "categories-grid.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass -w styles -o artifacts"
+    "scss": "node-sass -w styles -o artifacts",
+    "build": "webpack",
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,12 @@
     "node-sass": "^4.9.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "browser-sync": "^2.24.6",
     "browserify": "^16.2.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-concat": "^2.6.1",
@@ -27,6 +33,10 @@
     "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-watcher": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.17.0",
+    "webpack-cli": "^3.1.0"
   }
 }

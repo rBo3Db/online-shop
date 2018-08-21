@@ -1,3 +1,4 @@
+function loadPopup(){
 var popup = _.template(`
     <div id="login" class="popup__form popup__form--show-popup">
         <a class="popup__x popup__x--responsive-element">x</a>
@@ -25,3 +26,5 @@ var popup = _.template(`
 `)();
 
 document.getElementsByClassName('popup')[0].innerHTML = popup;
+}
+loadPopup()

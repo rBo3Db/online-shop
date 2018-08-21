@@ -1,7 +1,6 @@
+import '../tpl/popup.tpl.js';
 $(document).ready(function() {
     $('body').append('<div class="popup__blackout"></div>');
-     
-
     // function centerBox() {
         
     //     /* определяем нужные данные */
