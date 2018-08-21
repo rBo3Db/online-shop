@@ -51,35 +51,36 @@ $(document).ready(function() {
         $('#login').hide();
         $('#register').css('display','flex');
     });
+
 // Name and Password from the register-form
 
-    var name = $('#name');
-    var pw = $('#pw');
+    // var name = $('#name');
+    // var pw = $('#pw');
 
-    // storing input from register-form
-    function store() {
-        localStorage.setItem('name', name.value);
-        localStorage.setItem('pw', pw.value);
-    }
+    // // storing input from register-form
+    // function store() {
+    //     localStorage.setItem('name', name.value);
+    //     localStorage.setItem('pw', pw.value);
+    // }
 
-    // check if stored data from register-form is equal to entered data in the   login-form
-    function check() {
+    // // check if stored data from register-form is equal to entered data in the   login-form
+    // function check() {
 
-        // stored data from the register-form
-        var storedName = localStorage.getItem('name');
-        var storedPw = localStorage.getItem('pw');
+    //     // stored data from the register-form
+    //     var storedName = localStorage.getItem('name');
+    //     var storedPw = localStorage.getItem('pw');
 
-        // entered data from the login-form
-        var userName = $('#userName');
-        var userPw = $('#userPw');
+    //     // entered data from the login-form
+    //     var userName = $('#userName');
+    //     var userPw = $('#userPw');
 
-        // check if stored data from register-form is equal to data from login form
-        if(userName.value !== storedName || userPw.value !== storedPw) {
-            alert('ERROR');
-        }else {
-            alert('You are loged in.');
-        }
-    }
-    $('#login_btn').click( check() );
-    $('#rgstr_btn').click( store() );
+    //     // check if stored data from register-form is equal to data from login form
+    //     if(userName.value !== storedName || userPw.value !== storedPw) {
+    //         alert('ERROR');
+    //     }else {
+    //         alert('You are loged in.');
+    //     }
+    // }
+    // $('#login_btn').click( check() );
+    // $('#rgstr_btn').click( store() );
 });
