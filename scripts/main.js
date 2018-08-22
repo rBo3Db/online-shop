@@ -1,27 +1,27 @@
-
+import products from '../scripts/objects/categoriesObject.js'
+import categories from '../tpl/categories.tpl.js'
+import itemsGridTpl from '../tpl/items-grid.tpl.js'
 var i; 
 var j;
 let howMuchCategories = products.length;
 //создали базовую страницу с категриями
 function createPageFromTemplate(insertThat, insertIn, i, j) {
-    var categories = _.template(document.getElementById(insertThat).innerHTML)(products);
+    var templateForInsert = _.template(insertThat)({products, i, j});
     var div = document.createElement('div');
-    div.innerHTML = categories;
+    div.innerHTML = templateForInsert;
     document.getElementsByClassName(insertIn)[0].appendChild(div);
 };
+
+
 for ( i = 0; i < howMuchCategories ; i++ ) {
-    createPageFromTemplate('categories','main', i)
+    createPageFromTemplate(categories,'main', i)
 };
-// _.forEach(products, function(value, kay) {
-//     createPageFromTemplate('categories','main', kay)
-// })
-// отловили клик по категории
 $('.category').click(function() {
     i = +this.id;
-    $(".main").remove();
+    $(".main").empty();
     //создали страницу с товаром
     //  {
-        createPageFromTemplate('items-grid','global-conteiner');
+        createPageFromTemplate(itemsGridTpl,'global-conteiner');
         for (j = 0; j < products[i].goods.length ; j++ ) {
             createPageFromTemplate('goods-in-grid','main',i, j);
         };
@@ -29,10 +29,10 @@ $('.category').click(function() {
     //создали список категорий слева
 
     for (d = 0; d< howMuchCategories;d++) {
-        var categories = _.template('<li class="widget__link" id = '+ d +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ products[d].name +' </a></li>')(products);
+        var sideCategories = _.template('<li class="widget__link" id = '+ d +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ products[d].name +' </a></li>')(products);
         // var li = document.createElement('li');
         // li.innerHTML = categories;
-        $('ul').append(categories);
+        $('ul').append(side-categories);
         // document.getElementsByClassName('widget__list')[0].appendChild(li);
     }
     //клик по панели слева

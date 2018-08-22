@@ -71,3 +71,4 @@ var products = [
     }
 
 ];
+export default products;

@@ -1,3 +1,4 @@
+import products from '../scripts/objects/categoriesObject.js'
 $(document).ready(function() {
     var timeoutJobId = 0;
     var partOfName;

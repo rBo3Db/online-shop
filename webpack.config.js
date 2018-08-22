@@ -1,7 +1,8 @@
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
+const _ = require('lodash');
+const webpack = require('webpack');
 module.exports = {
     entry: './scripts/index.js',
     optimization: {
@@ -21,30 +22,38 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
-            // {
-            //     test: /\.scss$/,
-            //     use: [
-            //         // fallback to style-loader in development
-            //         process.env.NODE_ENV !== 'production'
-            //             ? 'style-loader'
-            //             : MiniCssExtractPlugin.loader,
-            //         'css-loader',
-            //         'sass-loader'
-            //     ]
-            // }
+            {
+                test: /\.scss$/,
+                use: [
+                    // fallback to style-loader in development
+                    process.env.NODE_ENV !== 'production'
+                        ? 'style-loader'
+                        : MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
+            }
         ]
     },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     filename: 'index.html',
-        //     template: './index.html'
-        // }),
-        // new MiniCssExtractPlugin({
-        //     // Options similar to the same options in webpackOptions.output
-        //     // both options are optional
-        //     filename: "[name].css",
-        //     chunkFilename: "[id].css"
-        // })
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './index.html'
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery/dist/jquery.min.js",
+            _: 'lodash'
+        })
     ],
     // devServer: {
     //     contentBase: path.join(__dirname, ''),
