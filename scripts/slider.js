@@ -69,3 +69,4 @@
     // 	slider.changeByClick(MouseEvent.target.className("slider__arrow-right"));
     // },50);
 // });
+export default Slider;

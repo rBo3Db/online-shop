@@ -1,18 +1,35 @@
-Html Webpack Plugin:
-<pre>
-  ReferenceError: j is not defined
-  
-  - index.html:96 
-    D:/projects/learning/global-task/index.html:96:6
-  
-  - index.html:119 module.exports
-    D:/projects/learning/global-task/index.html:119:3
-  
-  - index.js:284 Promise.resolve.then
-    [global-task]/[html-webpack-plugin]/index.js:284:18
-  
-  
-  - next_tick.js:188 process._tickCallback
-    internal/process/next_tick.js:188:7
-  
-</pre>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> index </title>
+        <!-- <link rel="stylesheet" href="./artifacts/main.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script> -->
+        <!-- <script src="./scripts/objects/categoriesObject.js"></script> -->
+        <!-- <script src='./scripts/min-min.js'></script> -->
+        <!-- <script src='./scripts/slider.js'></script> -->
+    </head>
+    <body class="body">
+        <div class="popup popup--zoom-popup"></div>  
+
+        <header class="header body__header"></header>
+        <!-- <div class="global-conteiner"> -->
+            <main class="main"> </main>
+
+        <footer class="footer">©</footer>
+        <!-- <script src='./tpl/header.tpl.js'></script>
+        <script src='./scripts/search.js'></script>
+        <script src='./tpl/popup.tpl.js'></script>
+        <script src="./scripts/popup.js"></script>       
+        <script src='./scripts/index.js'></script> -->
+        <script src='./.build/bundle.js'></script> 
+
+        
+    <script type="text/javascript" src="bundle.js"></script></body>
+</html>

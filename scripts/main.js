@@ -2,6 +2,9 @@ import products from '../scripts/objects/categoriesObject.js'
 import categories from '../tpl/categories.tpl.js'
 import tplWithLeftBar from '../tpl/items-grid.tpl.js'
 import goodsInGridTpl from '../tpl/goods-in-grid.tpl'
+import goodsInListTpl from '../tpl/goods-in-list.tpl'
+import Slider from '../scripts/slider.js';
+import itemTpl from '../tpl/item-card.tpl.js'
 var i; 
 var j;
 let howMuchCategories = products.length;
@@ -18,46 +21,46 @@ for ( i = 0; i < howMuchCategories ; i++ ) {
     createPageFromTemplate(categories,'main', i)
 };
 $('.category').click(function() {
-    i = +this.id;
+    i = Number(this.id);
     $('.main').remove();
     //создали с тимлейта шаблон для следующей страницы
     var templateForInsert = _.template(tplWithLeftBar)();
     $(templateForInsert).insertAfter('.header');
     //создали страницу с товаром
     //  {
-        for (j = 0; j < products[i].goods.length ; j++ ) {
-            createPageFromTemplate(goodsInGridTpl,'main',i, j);
-        };
+    for (j = 0; j < products[i].goods.length ; j++ ) {
+        createPageFromTemplate(goodsInGridTpl,'main',i, j);
+    };
     //создали список категорий слева
 
-    for (d = 0; d< howMuchCategories;d++) {
-        var sideCategories = _.template('<li class="widget__link" id = '+ d +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ products[d].name +' </a></li>')(products);
-        // var li = document.createElement('li');
-        // li.innerHTML = categories;
-        $('ul').append(side-categories);
-        // document.getElementsByClassName('widget__list')[0].appendChild(li);
+    for (var d = 0; d< howMuchCategories;d++) {
+        var sideCategories = _.template('<li class="widget__link" id = '+ d +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ products[d].name +' </a></li>')({products, d});
+        $('.widget__list').append(sideCategories);
     }
+
     //клик по панели слева
-    $('li').click(function() {
-        
+    $('.widget__link').click(function() {
         $('main').empty();
         i = Number(this.id);
         for (j = 0; j < products[i].goods.length ; j++ ) {
-            createPageFromTemplate('goods-in-grid','main',i, j);
+            createPageFromTemplate(goodsInGridTpl,'main',i, j);
         };  
     });
+    
     $('.change-view').click(function() {
         $('main').empty();
         // i = Number(this.id);
         for (j = 0; j < products[i].goods.length ; j++ ) {
-            createPageFromTemplate('goods-in-list','main',i, j);
+            createPageFromTemplate(goodsInListTpl,'main',i, j);
         };  
     });
-    $('body').on('click','.category',function() {
-        $('.global-conteiner').remove();//chistim vse
-        
+    $('.goods-range').on('click','.category',function() {
+        $('.content').remove();
+        $('.change-view').remove();//chistim vse
         j = Number(this.id);
-        createPageFromTemplate('item-card','body', i , j);
+        templateForInsert = _.template(itemTpl)({products, i , j});
+        $(templateForInsert).insertAfter('.header');
+        // createPageFromTemplate(itemTpl,'body', i , j);
         let slider = new Slider([   
             './pics/item-card/slider/1.jpg',
             './pics/item-card/slider/2.jpg',

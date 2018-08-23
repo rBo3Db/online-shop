@@ -1,7 +1,6 @@
 // import template from 'lodash.template'
 
 import '../styles/main.scss';
-import '../scripts/slider.js';
 
 import '../tpl/header.tpl.js';
 import '../scripts/search.js';
