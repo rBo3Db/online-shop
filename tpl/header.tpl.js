@@ -1,4 +1,5 @@
-var header = _.template(`
+import template from 'lodash/template';
+var header = template(`
     <a href="categories-grid.html">
         <div class="header__logo logo"> </div>
     </a>

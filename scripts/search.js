@@ -1,4 +1,8 @@
 import products from '../scripts/objects/categoriesObject.js'
+import template from 'lodash/template';
+import filter from 'lodash/filter';
+import forEach from 'lodash/forEach';
+
 $(document).ready(function() {
     var timeoutJobId = 0;
     var partOfName;
@@ -16,18 +20,18 @@ $(document).ready(function() {
     });
     function viewResult() {
         
-        var foundCategories = _.filter(products, function(item, i) {
+        var foundCategories = filter(products, function(item, i) {
             var productName = products[i].name;
             //var goods = products[i].goods[i].name;
             //console.log(productName.indexOf(partOfName) != -1);
             return (productName.indexOf(partOfName) != -1);
             
         })
-        // var arrayOfResults = _.map(foundCategories, function(value) {return value.id} );
+        // var arrayOfResults = map(foundCategories, function(value) {return value.id} );
         console.log('foundCategories' + foundCategories);
         $('.search__results').empty();
-        _.forEach(foundCategories,function(value) {
-            var categories = _.template('<li class="widget__link" id = '+ value.id +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ value.name +' </a></li>')();
+        forEach(foundCategories,function(value) {
+            var categories = template('<li class="widget__link" id = '+ value.id +'><a class=" widget__link--behover"><i class="fas fa-mobile-alt"></i> '+ value.name +' </a></li>')();
             console.log (value);
             $('.search__results').append(categories);
             $('li').click(function() {

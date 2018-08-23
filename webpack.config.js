@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const _ = require('lodash');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
     entry: './scripts/index.js',
     optimization: {
@@ -34,8 +35,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=100000'
+                test: /\.(jpg|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
             }
         ]
     },
@@ -47,16 +52,25 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: "[name].css",
+            filename: ".[name].css",
             chunkFilename: "[id].css"
         }),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",
-            _: 'lodash'
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: './pics',
+            to: 'pics'
+          }]),
+          new BundleAnalyzerPlugin([{
+      
+            generateStatsFile:true
+              
+          }])
     ],
-    // devServer: {
-    //     contentBase: path.join(__dirname, ''),
-    //     port: 3001
-    // }
+    devServer: {
+        contentBase: path.join(__dirname, ''),
+        port: 3001
+    },
+    watch : true
 };

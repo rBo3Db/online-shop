@@ -1,5 +1,6 @@
+import template from 'lodash/template';
 function loadPopup(){
-var popup = _.template(`
+var popup = template(`
     <div id="login" class="popup__form popup__form--show-popup">
         <a class="popup__x popup__x--responsive-element">x</a>
         Please Sign In
