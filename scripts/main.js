@@ -1,31 +1,33 @@
 import products from '../scripts/objects/categoriesObject.js'
 import categories from '../tpl/categories.tpl.js'
-import itemsGridTpl from '../tpl/items-grid.tpl.js'
+import tplWithLeftBar from '../tpl/items-grid.tpl.js'
+import goodsInGridTpl from '../tpl/goods-in-grid.tpl'
 var i; 
 var j;
 let howMuchCategories = products.length;
 //создали базовую страницу с категриями
 function createPageFromTemplate(insertThat, insertIn, i, j) {
     var templateForInsert = _.template(insertThat)({products, i, j});
-    var div = document.createElement('div');
-    div.innerHTML = templateForInsert;
-    document.getElementsByClassName(insertIn)[0].appendChild(div);
+    // var div = document.createElement('div');
+    // div.innerHTML = templateForInsert;
+    // document.getElementsByClassName(insertIn)[0].appendChild(div);
+    $(insertIn).append(templateForInsert);
 };
-
 
 for ( i = 0; i < howMuchCategories ; i++ ) {
     createPageFromTemplate(categories,'main', i)
 };
 $('.category').click(function() {
     i = +this.id;
-    $(".main").empty();
+    $('.main').remove();
+    //создали с тимлейта шаблон для следующей страницы
+    var templateForInsert = _.template(tplWithLeftBar)();
+    $(templateForInsert).insertAfter('.header');
     //создали страницу с товаром
     //  {
-        createPageFromTemplate(itemsGridTpl,'global-conteiner');
         for (j = 0; j < products[i].goods.length ; j++ ) {
-            createPageFromTemplate('goods-in-grid','main',i, j);
+            createPageFromTemplate(goodsInGridTpl,'main',i, j);
         };
-    // $('.category#' + idOfCategory)
     //создали список категорий слева
 
     for (d = 0; d< howMuchCategories;d++) {

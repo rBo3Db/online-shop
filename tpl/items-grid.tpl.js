@@ -1,4 +1,4 @@
-const itemsGridTpl = `
+const TplWithLeftBar = `
     <div class="change-view" id=""><a class="icons header__icons--responsive-element">List View</a></div>
     <div class="content">
         <nav class="widget">
@@ -9,4 +9,4 @@ const itemsGridTpl = `
         <h1></h1>
         <main class="main"></main>
     </div>`
-export default itemsGridTpl;
+export default TplWithLeftBar;
