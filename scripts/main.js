@@ -6,6 +6,7 @@ import goodsInListTpl from '../tpl/goods-in-list.tpl';
 import Slider from '../scripts/slider.js';
 import itemTpl from '../tpl/item-card.tpl.js';
 import template from 'lodash/template';
+
 var i; 
 var j;
 let howMuchCategories = products.length;
