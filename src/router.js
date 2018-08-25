@@ -1,10 +1,10 @@
-import MainPresenter from './presenters/main-presenter';
-
-function Router() {}
+// import MainPresenter from './presenters/main-presenter';
+import HeaderPresenter from './presenters/header-presenter';
 
 Router.prototype.dispatch = function(hash) {
+    
     if (hash === '#123') {
-        return [new MainPresenter()];
+        return [new HeaderPresenter()];
     }
     return [];
 }

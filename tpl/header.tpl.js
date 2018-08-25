@@ -14,5 +14,5 @@ var header = template(`
         <div class="search__results"></div>
     </div>
     `)();
-
-document.getElementsByClassName('header')[0].innerHTML = header;
+export default header;
+// document.getElementsByClassName('header')[0].innerHTML = header;
