@@ -70,7 +70,8 @@ module.exports = {
     ],
     devServer: {
         contentBase: path.join(__dirname, ''),
-        port: 3001
+        port: 3001,
+        historyApiFallback: true
     },
     watch : true
 };

@@ -1,8 +1,13 @@
 import App from './app';
+import createHistory from 'history/createBrowserHistory';
+import '../styles/main.scss';
+
+const history = createHistory();
 
 var app = new App();
-app.renderPage(location.hash);
 
-window.addEventListener('hashchange', function() {
-    app.renderPage(location.hash);
-}, false);
+app.renderPage(history);
+
+history.listen((location, action) => {
+    app.renderPage(history);
+});
