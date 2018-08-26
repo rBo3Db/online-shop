@@ -1,4 +1,6 @@
-import MainPresenter from './presenters/header-presenter';
+import HeaderPresenter from './presenters/header-presenter';
+import PopupPresenter from './presenters/popup-presenter';
+import CategoriesPresenter from './presenters/categories-presenter';
 
 
 function Router() {
@@ -15,7 +17,7 @@ Router.prototype.dispatch = function(history) {
 
     if (history.location.pathname === '/goods') {
         this.clean();
-        this.currentPreseners = [new MainPresenter(history)];
+        this.currentPreseners = [new HeaderPresenter(history), new PopupPresenter(history),new CategoriesPresenter(history)];
         return this.currentPreseners;
     }
     // if (history.location.pathname === '/goods') {

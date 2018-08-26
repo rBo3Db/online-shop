@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
     entry: './scripts/index.js',
+    devtool: 'source-map',
     optimization: {
         // We no not want to minimize our code.
         minimize: false

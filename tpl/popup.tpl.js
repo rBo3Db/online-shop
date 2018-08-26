@@ -1,5 +1,5 @@
 import template from 'lodash/template';
-function loadPopup(){
+// function loadPopup(){
 var popup = template(`
     <div id="login" class="popup__form popup__form--show-popup">
         <a class="popup__x popup__x--responsive-element">x</a>
@@ -26,6 +26,7 @@ var popup = template(`
     </div>
 `)();
 
-document.getElementsByClassName('popup')[0].innerHTML = popup;
-}
-loadPopup()
+// document.getElementsByClassName('popup')[0].innerHTML = popup;
+// }
+// loadPopup()
+export default popup;
