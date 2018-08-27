@@ -1,6 +1,6 @@
 import products from '../scripts/objects/categoriesObject.js';
 import categories from '../tpl/categories.tpl.js';
-import tplWithLeftBar from '../tpl/items-grid.tpl.js';
+import tplWithLeftBar from '../tpl/items-main-template.tpl.js';
 import goodsInGridTpl from '../tpl/goods-in-grid.tpl';
 import goodsInListTpl from '../tpl/goods-in-list.tpl';
 import Slider from '../scripts/slider.js';
