@@ -8,7 +8,7 @@ function LeftSideBarPresenter(history) {
     this.history = history;
     this.view = new LeftSideBarView();
     this.model = new MainModel();
-    this.element = document.getElementsByClassName('widget__list')[0];
+    this.element = document.getElementsByClassName('content')[0];
     
 }
 
