@@ -1,5 +1,3 @@
-import  goodsInListTpl  from './goods-in-list.tpl';
-import tplOfLeftBar from './left-side-bar.tpl';
 const TplWithLeftBar = `
     <div class="change-view">
         <a class="icons header__icons--responsive-element">

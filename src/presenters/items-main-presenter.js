@@ -15,7 +15,7 @@ function ItemsMainPresenter(history) {
 ItemsMainPresenter.prototype = Object.create(Presenter.prototype);
 ItemsMainPresenter.prototype.constructor = ItemsMainPresenter;
 ItemsMainPresenter.prototype.render = function(compiledTemplate) {
-    $('main').remove;
+    // $('main').remove;
     $(compiledTemplate).insertAfter(this.element)
 }
 

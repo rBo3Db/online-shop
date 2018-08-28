@@ -8,23 +8,22 @@ function LeftSideBarPresenter(history) {
     this.history = history;
     this.view = new LeftSideBarView();
     this.model = new MainModel();
-    this.element = document.getElementsByClassName('content')[0];
+    this.element = document.getElementById('widgetConteiner');
     
 }
 
 LeftSideBarPresenter.prototype = Object.create(Presenter.prototype);
 LeftSideBarPresenter.prototype.constructor = LeftSideBarPresenter;
+
+// LeftSideBarPresenter.prototype.render = function(compiledTemplate) {
+//     $(compiledTemplate).insertBefore(this.element);
+// };
+
 LeftSideBarPresenter.prototype.init = function() {
-
         var i;
-        console.log('element ' + this.element);
-        console.log(this.model);
-        
-        for ( i = 0; i < this.model.getData(products).length ; i++ ) {
-            console.log(this.model.getData(products));
+        // for ( i = 0; i < this.model.getData(products).length ; i++ ) {
             this.render(this.view.getTemplate(this.model.getData(products), i));
-
-    }
+    // }
     // this.getButtons();
     // this.bindEvents();
 }
