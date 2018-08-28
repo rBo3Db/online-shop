@@ -4,6 +4,7 @@ import CategoriesPresenter from './presenters/categories-presenter';
 // import ItemsMainPresenter from './presenters/items-main-presenter';
 import LeftSideBarPresenter from './presenters/left-side-bar-presenter';
 import goodsInListPresenter from './presenters/goods-in-list-presenter';
+import ItemViewPresenter from './presenters/item-card-presenter';
 
 function Router() {
     this.currentPreseners = [];
@@ -26,6 +27,12 @@ Router.prototype.dispatch = function(history) {
         this.clean();
 
         this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new LeftSideBarPresenter(history), new goodsInListPresenter(history)];
+        return this.currentPreseners;
+    }
+    if (history.location.pathname === '/good') {
+        this.clean();
+
+        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new ItemViewPresenter(history)];
         return this.currentPreseners;
     }
     // if (history.location.pathname === '/goods') {

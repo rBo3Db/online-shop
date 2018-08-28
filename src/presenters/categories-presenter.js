@@ -21,28 +21,28 @@ CategoriesPresenter.prototype.init = function() {
     // });
     
     for ( i = 0; i < this.model.getData(products).length ; i++ ) {
-
+        
         this.renderPlus(this.view.getTemplate(this.model.getData(products), i));
 
     };
-//     this.getButtons();
-//     this.bindEvents();
+    this.getButtons();
+    this.bindEvents();
 }
 
-// CategoriesPresenter.prototype.getButtons = function() {
-//     // this.category = document.getElementsByClassName('category')[0];
-//     // console.log('get buttons')
-//     this.category = $('.category');
-// }
+CategoriesPresenter.prototype.getButtons = function() {
+    // this.category = document.getElementsByClassName('category')[0];
+    // console.log('get buttons')
+    this.category = $('.category');
+}
 
-// CategoriesPresenter.prototype.bindEvents = function() {
-//     this.category.on('click', this.handleButtonClick.bind(this));
-// }
+CategoriesPresenter.prototype.bindEvents = function() {
+    this.category.on('click', this.handleButtonClick.bind(this));
+}
 
-// CategoriesPresenter.prototype.handleButtonClick = function(event) {
-//     console.log( event );
-//     this.history.push('/goods#'+ event.currentTarget.id );
-//     console.log('Click to button #' + event.currentTarget.id);
-// }
+CategoriesPresenter.prototype.handleButtonClick = function(event) {
+    console.log( event );
+    this.history.push('/goods?categoryID=' + event.currentTarget.id );
+    console.log('Click to button #' + event.currentTarget.id);
+}
 
 export default CategoriesPresenter;

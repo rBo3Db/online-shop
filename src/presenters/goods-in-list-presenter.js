@@ -9,12 +9,13 @@ function goodsInListPresenter(history) {
     this.view = new goodsInListView();
     this.model = new MainModel();
     this.element = document.getElementsByClassName('goods-range')[0];
+    this.SearchName = 'categoryID';
 }
 
 goodsInListPresenter.prototype = Object.create(Presenter.prototype);
 goodsInListPresenter.prototype.constructor = goodsInListPresenter;
 goodsInListPresenter.prototype.init = function() {
-    var i = Number(this.history.location.hash[1]);
+    var i = this.getQueryVariable(this.SearchName);
     var j;
     console.log(this.model);
     // this.model.getData[i].forEach(i => {
@@ -26,14 +27,15 @@ goodsInListPresenter.prototype.init = function() {
         this.renderPlus(this.view.getTemplate(this.model.getData(products), i, j));
 
     };
-//     this.getButtons();
-//     this.bindEvents();
+    this.getButtons();
+    this.bindEvents();
 }
 
 goodsInListPresenter.prototype.getButtons = function() {
     // this.category = document.getElementsByClassName('category')[0];
     // console.log('get buttons')
-    this.category = $('.category');
+    var classNameOfCategory = '.good';
+    this.category = $(classNameOfCategory);
 }
 
 goodsInListPresenter.prototype.bindEvents = function() {
@@ -42,7 +44,7 @@ goodsInListPresenter.prototype.bindEvents = function() {
 
 goodsInListPresenter.prototype.handleButtonClick = function(event) {
     console.log( event );
-    this.history.push('/goods#'+ event.currentTarget.id );
+    this.history.push('/good' +location.search + '&goodID=' + event.currentTarget.id);
     console.log('Click to button #' + event.currentTarget.id);
     this.clean();
 }
