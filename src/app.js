@@ -6,8 +6,8 @@ function App() {
     this.blocks = [];
 }
 
-App.prototype.renderPage = function(hash) {
-    this.blocks = this.router.dispatch(hash);
+App.prototype.renderPage = function(history, cart) {
+    this.blocks = this.router.dispatch(history, cart);
     if (this.blocks) {
         forEach(this.blocks, function(block) {
             block.init();

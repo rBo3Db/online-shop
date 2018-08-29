@@ -23,18 +23,18 @@ HeaderPresenter.prototype.init = function() {
 
 HeaderPresenter.prototype.getButtons = function() {
     this.search = document.getElementsByClassName('search')[0];
-    this.cardButton = document.getElementById('cardOpenerButton');
+    this.cartButton = document.getElementById('cardOpenerButton');
     this.popupOpenerButton = document.getElementById('popupOpenerButton');
 }
 
 HeaderPresenter.prototype.bindEvents = function() {
     this.search.addEventListener('keyup', this.handleButtonClick.bind(this), false);
-    this.cardButton.addEventListener('click', this.handleButtonClick.bind(this), false);
+    this.cartButton.addEventListener('click', this.handleButtonClick.bind(this), false);
     this.popupOpenerButton.addEventListener('click', this.handleButtonClick.bind(this), false);
 }
 
 HeaderPresenter.prototype.handleButtonClick = function(event) {
-    // this.history.push('/goods', { id: event.target.id });
+    this.history.push('/cart');
     console.log('Click to button #');
 }
 

@@ -22,7 +22,7 @@ const itemTpl = `
                 <form>
                     Quantity
                     <input class="cost-block__quantity--responsive-element"type="number" required value="1">
-                    <button type="submit" class="cost-block__submit-button--responsive-element">Add to cart</button>
+                    <a class="cost-block__submit-button--responsive-element">Add to cart</a>
                 </form>
             </div>
             <div class="social-networks">

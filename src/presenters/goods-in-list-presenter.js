@@ -3,13 +3,14 @@ import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import goodsInListView from '../views/goods-in-list-view';
 
-function goodsInListPresenter(history) {
+function goodsInListPresenter(history, cart) {
     Presenter.apply(this, arguments);
     this.history = history;
     this.view = new goodsInListView();
     this.model = new MainModel();
     this.element = document.getElementsByClassName('goods-range')[0];
     this.SearchName = 'categoryID';
+    this.cart = cart;
 }
 
 goodsInListPresenter.prototype = Object.create(Presenter.prototype);

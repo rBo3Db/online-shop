@@ -17,8 +17,8 @@ PopupPresenter.prototype.constructor = PopupPresenter;
 PopupPresenter.prototype.init = function() {
 
     this.render(this.view.getTemplate());
-    this.getButtons();
-    this.bindEvents();
+    // this.getButtons();
+    // this.bindEvents();
 }
 
 PopupPresenter.prototype.getButtons = function() {

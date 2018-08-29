@@ -33,14 +33,14 @@ ItemsMainPresenter.prototype.init = function() {
 }
 
 ItemsMainPresenter.prototype.getButtons = function() {
-
+    // this.addToCartButton = document.getElementsByClassName('cost-block__submit-button--responsive-element')[0];
 }
 
 ItemsMainPresenter.prototype.bindEvents = function() {
-
+    // this.cardButton.addEventListener('click', this.handleButtonClick.bind(this), false);
 }
 
-ItemsMainPresenter.prototype.handleButtonClick = function(event) {
+ItemsMainPresenter.prototype.handleButtonClick = function() {
 
 }
 

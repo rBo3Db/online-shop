@@ -5,6 +5,7 @@ import CategoriesPresenter from './presenters/categories-presenter';
 import LeftSideBarPresenter from './presenters/left-side-bar-presenter';
 import goodsInListPresenter from './presenters/goods-in-list-presenter';
 import ItemViewPresenter from './presenters/item-card-presenter';
+import cartPresenter from './presenters/cart-presenter';
 
 function Router() {
     this.currentPreseners = [];
@@ -16,7 +17,7 @@ Router.prototype.clean = function () {
     });
 }
 
-Router.prototype.dispatch = function(history) {
+Router.prototype.dispatch = function(history, cart) {
 
     if (history.location.pathname === '/index') {
         this.clean();
@@ -26,13 +27,19 @@ Router.prototype.dispatch = function(history) {
     if (history.location.pathname === '/goods') {
         this.clean();
 
-        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new LeftSideBarPresenter(history), new goodsInListPresenter(history)];
+        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new LeftSideBarPresenter(history), new goodsInListPresenter(history, cart)];
         return this.currentPreseners;
     }
     if (history.location.pathname === '/good') {
         this.clean();
 
-        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new ItemViewPresenter(history)];
+        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new ItemViewPresenter(history, cart)];
+        return this.currentPreseners;
+    }
+    if (history.location.pathname === '/cart') {
+        this.clean();
+
+        this.currentPreseners = [new HeaderPresenter(history) , new PopupPresenter(history), new cartPresenter(history, cart)];
         return this.currentPreseners;
     }
     // if (history.location.pathname === '/goods') {
