@@ -2,6 +2,7 @@
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import sideSumView from '../views/side-sum-view';
+// import { autobind } from 'core-decorators';
 
 export default class SideSumPresenter extends Presenter {
     constructor(history) {

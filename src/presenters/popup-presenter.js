@@ -2,6 +2,7 @@
 import Presenter from './presenter';
 // import MainModel from '../models/main-model';
 import PopupView from '../views/popup-view';
+// import { autobind } from 'core-decorators';
 
 
 export default class PopupPresenter extends Presenter {

@@ -2,6 +2,7 @@ import products from '../categoriesObject';
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import LeftSideBarView from '../views/left-side-bar-view';
+import { autobind } from 'core-decorators';
 
 export default class LeftSideBarPresenter extends Presenter {
     constructor(history) {
@@ -30,11 +31,11 @@ export default class LeftSideBarPresenter extends Presenter {
         // console.log('get buttons')
         this.sideBarCategory = $('.widget__link--behover');
     }
-
+    
     bindEvents() {
-        this.sideBarCategory.on('click', this.handleSideBarCategoryClick.bind(this));
+        this.sideBarCategory.on('click', this.handleSideBarCategoryClick);
     }
-
+    @autobind
     handleSideBarCategoryClick(event) {
         this.history.push('/goods?categoryID='+ event.currentTarget.id );
     }

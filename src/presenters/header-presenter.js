@@ -1,6 +1,6 @@
 import Presenter from './presenter';
 import HeaderView from '../views/header-view';
-
+import { autobind } from 'core-decorators';
 
 export default class HeaderPresenter extends Presenter{
     constructor(history) {
@@ -23,18 +23,20 @@ export default class HeaderPresenter extends Presenter{
     }
 
     bindEvents() {
-        this.search.addEventListener('keyup', this.handleSearchInputKeyup.bind(this), false);
-        this.cartButton.addEventListener('click', this.handleCartButtonClick.bind(this), false);
-        this.popupOpenerButton.addEventListener('click', this.handlePopupOpenerButtonClick.bind(this), false);
+        this.search.addEventListener('keyup', this.handleSearchInputKeyup, false);
+        this.cartButton.addEventListener('click', this.handleCartButtonClick, false);
+        this.popupOpenerButton.addEventListener('click', this.handlePopupOpenerButtonClick, false);
     }
-
+    @autobind
     handleCartButtonClick() {
         this.history.push('/cart');
         console.log('Click to button #');
     }
+    @autobind
     handlePopupOpenerButtonClick() {
         this.history.push(location.pathname + location.search + '#login');
     }
+    @autobind
     handleSearchInputKeyup() {
         console.log(this.search.value)
     }

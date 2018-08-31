@@ -2,6 +2,7 @@ import products from '../categoriesObject';
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import CategoriesView from '../views/categories-view';
+import { autobind } from 'core-decorators';
 
 class CategoriesPresenter extends Presenter{
     constructor (history) {
@@ -33,9 +34,9 @@ class CategoriesPresenter extends Presenter{
     }
 
     bindEvents() {
-        this.category.on('click', this.handleCategoryButtonClick.bind(this));
+        this.category.on('click', this.handleCategoryButtonClick);
     }
-
+    @autobind
     handleCategoryButtonClick(event) {
         console.log( event );
         this.history.push('/goods?categoryID=' + event.currentTarget.id );

@@ -2,7 +2,7 @@ import products from '../categoriesObject';
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import ItemCardView from '../views/item-card-view';
-
+import { autobind } from 'core-decorators';
 
 export default class ItemViewPresenter extends Presenter {
     constructor (history, cart) {
@@ -27,11 +27,11 @@ export default class ItemViewPresenter extends Presenter {
     getButtons() {
         this.addToCartButton = document.getElementsByClassName('cost-block__submit-button--responsive-element')[0];
     }
-
+    
     bindEvents() {
-        this.addToCartButton.addEventListener('click', this.handleButtonClick.bind(this), false);
+        this.addToCartButton.addEventListener('click', this.handleButtonClick, false);
     }
-
+    @autobind
 
     handleButtonClick() {
         this.cart.add(this.model.getCartModel(this.model.getData(products), this.i, this.j));

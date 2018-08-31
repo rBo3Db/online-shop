@@ -2,7 +2,7 @@
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import CartView from '../views/cart-view';
-
+import { autobind } from 'core-decorators';
 
 export default class cartPresenter extends Presenter {
     constructor(history, cart) {
@@ -24,15 +24,15 @@ export default class cartPresenter extends Presenter {
         this.getButtons();
         this.bindEvents();
     }
-
+    
     getButtons() {
         this.remove = $('.good__link-remove-good-in-card');
     }
 
     bindEvents() {
-        this.remove.on('click', this.handleRemoveButtonClick.bind(this));
+        this.remove.on('click', this.handleRemoveButtonClick);
     }
-
+    @autobind
     handleRemoveButtonClick(event) {
         this.model.getData(this.cart.products.splice(event.target.id, 1));
         this.history.push('/cart');

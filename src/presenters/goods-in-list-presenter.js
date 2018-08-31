@@ -2,6 +2,7 @@ import products from '../categoriesObject';
 import Presenter from './presenter';
 import MainModel from '../models/main-model';
 import goodsInListView from '../views/goods-in-list-view';
+import { autobind } from 'core-decorators';
 
 export default class goodsInListPresenter extends Presenter {
     constructor(history, cart) {
@@ -32,9 +33,9 @@ export default class goodsInListPresenter extends Presenter {
     }
 
     bindEvents() {
-        this.category.on('click', this.handleGoodButtonClick.bind(this));
+        this.category.on('click', this.handleGoodButtonClick);
     }
-
+    @autobind
     handleGoodButtonClick(event) {
         console.log(event);
         if (event.target.tagName  === 'BUTTON') {
