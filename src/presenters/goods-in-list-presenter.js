@@ -9,23 +9,22 @@ function goodsInListPresenter(history, cart) {
     this.view = new goodsInListView();
     this.model = new MainModel();
     this.element = document.getElementsByClassName('goods-range')[0];
-    this.SearchName = 'categoryID';
+    this.i = this.getQueryVariable('categoryID');
     this.cart = cart;
 }
 
 goodsInListPresenter.prototype = Object.create(Presenter.prototype);
 goodsInListPresenter.prototype.constructor = goodsInListPresenter;
 goodsInListPresenter.prototype.init = function() {
-    var i = this.getQueryVariable(this.SearchName);
     var j;
     console.log(this.model);
     // this.model.getData[i].forEach(i => {
     //     this.render(this.view.getTemplate(this.model.getData(products, i)));
     // });
     
-    for ( j = 0; j < this.model.getData(products[i].goods).length ; j++ ) {
+    for ( j = 0; j < this.model.getData(products[this.i].goods).length ; j++ ) {
     
-        this.renderPlus(this.view.getTemplate(this.model.getData(products), i, j));
+        this.renderPlus(this.view.getTemplate(this.model.getData(products), this.i, j));
 
     };
     this.getButtons();
@@ -37,22 +36,25 @@ goodsInListPresenter.prototype.getButtons = function() {
     // console.log('get buttons')
     var classNameOfCategory = '.good';
     this.category = $(classNameOfCategory);
+    this.addToCardButton = $("button")
 }
 
 goodsInListPresenter.prototype.bindEvents = function() {
-    this.category.on('click', this.handleButtonClick.bind(this));
+    // this.addToCardButton.on('click', this.addToCartButtonClick.bind(this));
+    this.category.on('click', this.handleGoodButtonClick.bind(this));
 }
 
-goodsInListPresenter.prototype.handleButtonClick = function(event) {
-    console.log( event );
-    this.history.push('/good' +location.search + '&goodID=' + event.currentTarget.id);
-    console.log('Click to button #' + event.currentTarget.id);
-    this.clean();
+goodsInListPresenter.prototype.handleGoodButtonClick = function(event) {
+    console.log(event);
+    if (event.target.tagName  === 'BUTTON') {
+        // event.stopPropagation();
+        this.cart.add(this.model.getCartModel(this.model.getData(products), this.i, event.target.id));
+    } else {
+    this.history.push('/good' + location.search + '&goodID=' + event.currentTarget.id);
+    }
 }
+// goodsInListPresenter.prototype.addToCartButtonClick = function(event) {
 
-// goodsInListPresenter.prototype.clean = function() {
-//     console.log(13);
-//     this.element.innerHTML = '';
 // }
 
 export default goodsInListPresenter;

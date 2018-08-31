@@ -1,5 +1,5 @@
 // import  MainModel  from "../src/models/main-model";
-
+// import ls from 'local-storage';
 export default class Cart  {
     constructor(){
         this.products = [];
@@ -10,8 +10,9 @@ export default class Cart  {
     //    let numberOfPurchases = +$(numberOfPurchas).val() || 1;
     //     productData[0].numberOfPurchases = numberOfPurchases;
         this.products.push(productData[0]);
+        // ls.set(key, value);
         console.log(this.products);
-    }
+    };
 
     // remove() {
     //     for (var i = 0; i < cart.products.length; i++) {

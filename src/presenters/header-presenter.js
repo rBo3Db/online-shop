@@ -28,15 +28,22 @@ HeaderPresenter.prototype.getButtons = function() {
 }
 
 HeaderPresenter.prototype.bindEvents = function() {
-    this.search.addEventListener('keyup', this.handleButtonClick.bind(this), false);
-    this.cartButton.addEventListener('click', this.handleButtonClick.bind(this), false);
-    this.popupOpenerButton.addEventListener('click', this.handleButtonClick.bind(this), false);
+    this.search.addEventListener('keyup', this.handleSearchInputKeyup.bind(this), false);
+    this.cartButton.addEventListener('click', this.handleCartButtonClick.bind(this), false);
+    this.popupOpenerButton.addEventListener('click', this.handlePopupOpenerButtonClick.bind(this), false);
 }
 
-HeaderPresenter.prototype.handleButtonClick = function(event) {
+HeaderPresenter.prototype.handleCartButtonClick = function() {
     this.history.push('/cart');
     console.log('Click to button #');
 }
+HeaderPresenter.prototype.handlePopupOpenerButtonClick = function() {
+    this.history.push(location.pathname + location.search + '#login');
+}
+HeaderPresenter.prototype.handleSearchInputKeyup = function() {
+    console.log(this.search.value)
+}
+
 
 // HeaderPresenter.prototype.clean = function() {
 //     console.log(13);

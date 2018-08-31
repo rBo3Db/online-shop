@@ -36,10 +36,10 @@ CategoriesPresenter.prototype.getButtons = function() {
 }
 
 CategoriesPresenter.prototype.bindEvents = function() {
-    this.category.on('click', this.handleButtonClick.bind(this));
+    this.category.on('click', this.handleCategoryButtonClick.bind(this));
 }
 
-CategoriesPresenter.prototype.handleButtonClick = function(event) {
+CategoriesPresenter.prototype.handleCategoryButtonClick = function(event) {
     console.log( event );
     this.history.push('/goods?categoryID=' + event.currentTarget.id );
     console.log('Click to button #' + event.currentTarget.id);

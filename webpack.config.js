@@ -7,10 +7,10 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
     entry: './scripts/index.js',
     devtool: 'source-map',
-    optimization: {
-        // We no not want to minimize our code.
-        minimize: false
-      },
+    // optimization: {
+    //     // We no not want to minimize our code.
+    //     minimize: false
+    //   },
     output: {
         path: path.resolve(__dirname, '.build'),
         filename: 'bundle.js'
@@ -64,9 +64,7 @@ module.exports = {
             to: 'pics'
           }]),
           new BundleAnalyzerPlugin([{
-      
             generateStatsFile:true
-              
           }])
     ],
     devServer: {

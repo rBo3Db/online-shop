@@ -27,27 +27,24 @@ cartPresenter.prototype.init = function() {
         this.renderPlus(this.view.getTemplate(this.model.getData(this.cart.products), i));
 
     };
-    // this.getButtons();
-    // this.bindEvents();
+    this.getButtons();
+    this.bindEvents();
 }
 
-// cartPresenter.prototype.getButtons = function() {
-//     // this.category = document.getElementsByClassName('category')[0];
-//     // console.log('get buttons')
-//     var classNameOfCategory = '.good';
-//     this.category = $(classNameOfCategory);
-// }
+cartPresenter.prototype.getButtons = function() {
+    // this.category = document.getElementsByClassName('category')[0];
+    // console.log('get buttons') = '.good';
+    this.remove = $('.good__link-remove-good-in-card');
+}
 
-// cartPresenter.prototype.bindEvents = function() {
-//     this.category.on('click', this.handleButtonClick.bind(this));
-// }
+cartPresenter.prototype.bindEvents = function() {
+    this.remove.on('click', this.handleRemoveButtonClick.bind(this));
+}
 
-// cartPresenter.prototype.handleButtonClick = function(event) {
-//     console.log( event );
-//     this.history.push('/good' +location.search + '&goodID=' + event.currentTarget.id);
-//     console.log('Click to button #' + event.currentTarget.id);
-//     this.clean();
-// }
+cartPresenter.prototype.handleRemoveButtonClick = function(event) {
+    this.model.getData(this.cart.products.splice(event.target.id, 1));
+    this.history.push('/cart');
+}
 
 // cartPresenter.prototype.clean = function() {
 //     console.log(13);

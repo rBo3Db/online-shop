@@ -6,4 +6,4 @@
 // import '../scripts/popup.js';
 
 // import '../scripts/main.js';
-import '../src/index';
+import '../src/index.js';

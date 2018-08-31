@@ -21,22 +21,22 @@ PopupPresenter.prototype.init = function() {
     // this.bindEvents();
 }
 
-PopupPresenter.prototype.getButtons = function() {
-    this.search = document.getElementsByClassName('search')[0];
-    this.cardButton = document.getElementById('cardOpenerButton');
-    this.popupOpenerButton = document.getElementById('popupOpenerButton');
-}
+// PopupPresenter.prototype.getButtons = function() {
+//     this.search = document.getElementsByClassName('search')[0];
+//     this.cardButton = document.getElementById('cardOpenerButton');
+//     this.popupOpenerButton = document.getElementById('popupOpenerButton');
+// }
 
-PopupPresenter.prototype.bindEvents = function() {
-    this.search.addEventListener('keyup', this.handleButtonClick.bind(this), false);
-    this.cardButton.addEventListener('click', this.handleButtonClick.bind(this), false);
-    this.popupOpenerButton.addEventListener('click', this.handleButtonClick.bind(this), false);
-}
+// PopupPresenter.prototype.bindEvents = function() {
+//     this.search.addEventListener('keyup', this.handleButtonClick.bind(this), false);
+//     this.cardButton.addEventListener('click', this.handleButtonClick.bind(this), false);
+//     this.popupOpenerButton.addEventListener('click', this.handleButtonClick.bind(this), false);
+// }
 
-PopupPresenter.prototype.handleButtonClick = function(event) {
-    this.history.push('/goods', { id: event.target.id });
-    console.log('Click to button #');
-}
+// PopupPresenter.prototype.handleButtonClick = function(event) {
+//     this.history.push('/goods', { id: event.target.id });
+//     console.log('Click to button #');
+// }
 
 // PopupPresenter.prototype.clean = function() {
 //     console.log(13);

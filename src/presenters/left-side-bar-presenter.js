@@ -24,26 +24,23 @@ LeftSideBarPresenter.prototype.init = function() {
         // for ( i = 0; i < this.model.getData(products).length ; i++ ) {
             this.render(this.view.getTemplate(this.model.getData(products), i));
     // }
-    // this.getButtons();
-    // this.bindEvents();
+    this.getButtons();
+    this.bindEvents();
 }
 
-// LeftSideBarPresenter.prototype.getButtons = function() {
-//     // this.category = document.getElementsByClassName('category')[0];
-//     // console.log('get buttons')
-//     this.category = $('.category');
-// }
+LeftSideBarPresenter.prototype.getButtons = function() {
+    // this.category = document.getElementsByClassName('category')[0];
+    // console.log('get buttons')
+    this.sideBarCategory = $('.widget__link--behover');
+}
 
-// LeftSideBarPresenter.prototype.bindEvents = function() {
-//     this.category.on('click', this.handleButtonClick.bind(this));
-// }
+LeftSideBarPresenter.prototype.bindEvents = function() {
+    this.sideBarCategory.on('click', this.handleSideBarCategoryClick.bind(this));
+}
 
-// LeftSideBarPresenter.prototype.handleButtonClick = function(event) {
-//     console.log( event );
-//     this.history.push('/goods#'+ event.currentTarget.id );
-//     console.log('Click to button #' + event.currentTarget.id);
-//     this.clean();
-// }
+LeftSideBarPresenter.prototype.handleSideBarCategoryClick = function(event) {
+    this.history.push('/goods?categoryID='+ event.currentTarget.id );
+}
 
 // LeftSideBarPresenter.prototype.clean = function() {
 //     console.log(13);
