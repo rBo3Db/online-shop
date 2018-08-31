@@ -1,11 +1,11 @@
 import categories from '../../tpl/categories.tpl'
 import template from 'lodash/template';
-function CategoriesView() {}
+class CategoriesView {
 
-CategoriesView.prototype.getTemplate = function(products, i) {
+    getTemplate(products, i) {
 
-    var templateForInsert = template(categories)({products, i});
-    return templateForInsert;
+        const templateForInsert = template(categories)({products, i});
+        return templateForInsert;
+    }
 }
-
 export default CategoriesView;

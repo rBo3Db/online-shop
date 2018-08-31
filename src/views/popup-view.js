@@ -1,8 +1,8 @@
 import popup from '../../tpl/popup.tpl'
-function PopupView() {}
+class PopupView {
 
-PopupView.prototype.getTemplate = function() {
-    return popup;
+    getTemplate() {
+        return popup;
+    }
 }
-
 export default PopupView;

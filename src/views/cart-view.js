@@ -1,11 +1,11 @@
 import cartTpl from '../../tpl/cart.tpl'
 import template from 'lodash/template';
-function CartView() {}
+class CartView {
 
-CartView.prototype.getTemplate = function(products, i) {
+    getTemplate(products, i) {
 
-    var templateForInsert = template(cartTpl)({products, i});
-    return templateForInsert;
+        const templateForInsert = template(cartTpl)({products, i});
+        return templateForInsert;
+    }
 }
-
 export default CartView;

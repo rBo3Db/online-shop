@@ -1,8 +1,8 @@
 import header from '../../tpl/header.tpl'
-function HeaderView() {}
+class HeaderView {
 
-HeaderView.prototype.getTemplate = function() {
-    return header;
+    getTemplate() {
+        return header;
+    }
 }
-
 export default HeaderView;
