@@ -39,5 +39,11 @@ export default class LeftSideBarPresenter extends Presenter {
     handleSideBarCategoryClick(event) {
         this.history.push('/goods?categoryID='+ event.currentTarget.id );
     }
-
+    unbind() {
+        this.sideBarCategory.unbind();
+    }
+    clean() {
+        this.unbind();
+        this.element.innerHTML = '';
+    }
 }

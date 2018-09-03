@@ -31,10 +31,18 @@ export default class ItemViewPresenter extends Presenter {
     bindEvents() {
         this.addToCartButton.addEventListener('click', this.handleButtonClick, false);
     }
+    
     @autobind
 
     handleButtonClick() {
         this.cart.add(this.model.getCartModel(this.model.getData(products), this.i, this.j));
         console.log('Click to button #');
+    }
+    unbind() {
+        this.addToCartButton.removeEventListener('click', this.handleButtonClick,false);
+    }
+    clean() {
+        this.unbind();
+        this.element.innerHTML = '';
     }
 }

@@ -40,4 +40,14 @@ export default class HeaderPresenter extends Presenter{
     handleSearchInputKeyup() {
         console.log(this.search.value)
     }
+
+    unbind() {
+        this.search.removeEventListener('keyup', this.handleSearchInputKeyup,false);
+        this.cartButton.removeEventListener('click', this.handleCartButtonClick,false);
+        this.popupOpenerButton.removeEventListener('click', this.handlePopupOpenerButtonClick,false);
+    }
+    clean() {
+        this.unbind();
+        this.element.innerHTML = '';
+    }
 }

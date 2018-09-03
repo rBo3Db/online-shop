@@ -44,4 +44,11 @@ export default class goodsInListPresenter extends Presenter {
         this.history.push('/good' + location.search + '&goodID=' + event.currentTarget.id);
         }
     }
+    unbind() {
+        this.category.unbind();
+    }
+    clean() {
+        this.unbind();
+        this.element.innerHTML = '';
+    }
 }

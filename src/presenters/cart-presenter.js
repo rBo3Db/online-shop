@@ -37,4 +37,11 @@ export default class cartPresenter extends Presenter {
         this.model.getData(this.cart.products.splice(event.target.id, 1));
         this.history.push('/cart');
     }
+    unbind() {
+        this.remove.unbind();
+    }
+    clean() {
+        this.unbind();
+        this.element.innerHTML = '';
+    }
 }
